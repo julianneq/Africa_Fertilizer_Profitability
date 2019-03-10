@@ -1,0 +1,186 @@
+LocationID,Country,Location,Region,Latitude,Longitude,ElevM,File1,File2,File3,File4
+5,ANGOLA,ANGOLA,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+6,ANGOLA,CABINDA,Eastern and Southern Africa,-5.6,12.2,22,lat-5.625_long12.125.txt,,,
+7,ANGOLA,CACUSO,Eastern and Southern Africa,-9.42,15.75,1067,lat-9.375_long15.625.txt,lat-9.375_long15.875.txt,,
+8,ANGOLA,CELA,Eastern and Southern Africa,-11.42,15.12,1305,lat-11.375_long15.125.txt,,,
+9,ANGOLA,CHIANGA,Eastern and Southern Africa,-12.73,15.83,1693,lat-12.625_long15.875.txt,,,
+10,ANGOLA,HUMPATA,Eastern and Southern Africa,-15.03,13.43,1890,lat-15.125_long13.375.txt,,,
+11,ANGOLA,KILOMBA,Eastern and Southern Africa,-8.9,14.7,514,lat-8.875_long14.625.txt,,,
+12,ANGOLA,KILOMBO,Eastern and Southern Africa,-8.91,14.73,766,lat-8.875_long14.625.txt,,,
+13,ANGOLA,KILOMBO EXPERIMENTAL STATION,Eastern and Southern Africa,-8.9,14.7,514,lat-8.875_long14.625.txt,,,
+14,ANGOLA,MALANGE,Eastern and Southern Africa,-9.533,16.333,1149,lat-9.625_long16.375.txt,,,
+15,ANGOLA,MAZOZO,Eastern and Southern Africa,-9.1,13.7,41,lat-9.125_long13.625.txt,,,
+16,ANGOLA,MAZOZO EXPERIMENTAL STATION,Eastern and Southern Africa,-9.1,13.7,41,lat-9.125_long13.625.txt,,,
+17,ANGOLA,POLIGNO-FLORESTA,Eastern and Southern Africa,-9.52,16.32,1162,lat-9.625_long16.375.txt,,,
+18,ANGOLA,ST. VINCENT,Eastern and Southern Africa,-5.57,12.2,57,lat-5.625_long12.125.txt,,,
+77,BOTSWANA,GOODHOPE,Eastern and Southern Africa,-25.48,25.47,1268,lat-25.375_long25.375.txt,,,
+78,BOTSWANA,HUKUNTSI,Eastern and Southern Africa,-24,21.8,1140,lat-24.125_long21.875.txt,lat-23.875_long21.875.txt,,
+79,BOTSWANA,PANDAMATENGA,Eastern and Southern Africa,-18.55,25.65,1071,lat-18.625_long25.625.txt,,,
+80,BOTSWANA,PELOTSHETLHA,Eastern and Southern Africa,-23.03,26.517,1111,lat-23.125_long26.625.txt,,,
+81,BOTSWANA,SEBELE,Eastern and Southern Africa,-24.57,25.95,995,lat-24.625_long25.875.txt,,,
+82,BOTSWANA,SEBELE-LOWN,Eastern and Southern Africa,-24.6,26,979,lat-24.625_long25.875.txt,lat-24.625_long26.125.txt,,
+210,CONGO,TSHIBATI,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+278,ERITREA,HALHALE,Eastern and Southern Africa,15,39,1837,lat14.875_long38.875.txt,lat15.125_long38.875.txt,lat14.875_long39.125.txt,lat15.125_long39.125.txt
+279,ERITREA,SHAMBIKO,Eastern and Southern Africa,14.92,37.83,906,lat14.875_long37.875.txt,,,
+286,ETHIOPIA,BAKO,Eastern and Southern Africa,9.1,37.15,1680,lat9.125_long37.125.txt,,,
+295,ETHIOPIA,MELKASA,Eastern and Southern Africa,8.4,39.33,1545,lat8.375_long39.375.txt,,,
+299,ETHIOPIA,NULL,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+300,ETHIOPIA,PAWE,Eastern and Southern Africa,11.23,38,1499,lat11.125_long37.875.txt,lat11.125_long38.125.txt,,
+464,KENYA,ALUPE,Eastern and Southern Africa,0.5,34.11,1168,lat0.375_long34.125.txt,lat0.625_long34.125.txt,,
+469,KENYA,BUNGOMA,Eastern and Southern Africa,0.567,34.567,1414,lat0.625_long34.625.txt,,,
+474,KENYA,EMBU,Eastern and Southern Africa,-0.5,37.45,1492,lat-0.625_long37.375.txt,lat-0.375_long37.375.txt,,
+480,KENYA,KAKAMEGA,Eastern and Southern Africa,0.27,34.74,1526,lat0.375_long34.625.txt,,,
+487,KENYA,KIBOKO,Eastern and Southern Africa,-2.25,37.73,990,lat-2.375_long37.625.txt,lat-2.125_long37.625.txt,,
+492,KENYA,KITALE,Eastern and Southern Africa,1.01,35,1859,lat1.125_long34.875.txt,lat1.125_long35.125.txt,,
+501,KENYA,MTWAPA,Eastern and Southern Africa,-3.93,39.75,23,lat-3.875_long39.625.txt,lat-3.875_long39.875.txt,,
+507,KENYA,SIGOR,Eastern and Southern Africa,1.483,35.467,976,lat1.375_long35.375.txt,,,
+513,LESOTHO,LERIBE,Eastern and Southern Africa,-28.88,28.05,1621,lat-28.875_long28.125.txt,,,
+515,LESOTHO,MACHACHE,Eastern and Southern Africa,-29.367,27.917,2337,lat-29.375_long27.875.txt,,,
+516,LESOTHO,MAHOBONG,Eastern and Southern Africa,-28.88,28.05,1621,lat-28.875_long28.125.txt,,,
+517,LESOTHO,MASERU,Eastern and Southern Africa,-29.28,27.5,1503,lat-29.375_long27.375.txt,lat-29.375_long27.625.txt,,
+520,LESOTHO,NYAKOSOBA,Eastern and Southern Africa,-29.55,27.78,1942,lat-29.625_long27.875.txt,,,
+521,LESOTHO,TEYATEYANENG,Eastern and Southern Africa,-29.15,27.75,1688,lat-29.125_long27.625.txt,lat-29.125_long27.875.txt,,
+524,MALAWI,BAKA,Eastern and Southern Africa,-9.75,34,477,lat-9.875_long33.875.txt,lat-9.625_long33.875.txt,lat-9.875_long34.125.txt,lat-9.625_long34.125.txt
+525,MALAWI,BAKA RESEARCH STATION,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+526,MALAWI,BEMBEKE,Eastern and Southern Africa,-14.17,34.43,1054,lat-14.125_long34.375.txt,,,
+527,MALAWI,BOLERO,Eastern and Southern Africa,-10.983,33.75,1099,lat-10.875_long33.625.txt,lat-10.875_long33.875.txt,,
+528,MALAWI,BVUMBWE,Eastern and Southern Africa,-15.92,35.07,1172,lat-15.875_long35.125.txt,,,
+529,MALAWI,BWANJE,Eastern and Southern Africa,-14.08,34.95,474,lat-14.125_long34.875.txt,,,
+530,MALAWI,CHITALA,Eastern and Southern Africa,-13.13,34.07,769,lat-13.125_long34.125.txt,,,
+531,MALAWI,CHITEDZE,Eastern and Southern Africa,-13.98,33.63,1140,lat-13.875_long33.625.txt,,,
+532,MALAWI,LUNYANGWA,Eastern and Southern Africa,-11.45,33.917,1290,lat-11.375_long33.875.txt,,,
+533,MALAWI,MAKOKA,Eastern and Southern Africa,-14.7,35.6,856,lat-14.625_long35.625.txt,,,
+534,MALAWI,MBAWA,Eastern and Southern Africa,-12.1,33.5,1357,lat-12.125_long33.375.txt,lat-12.125_long33.625.txt,,
+535,MALAWI,MPHIMBI,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+536,MALAWI,NGABU,Eastern and Southern Africa,-16.47,34.92,91,lat-16.375_long34.875.txt,,,
+537,MALAWI,NOT IDENTIFIED,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+538,MALAWI,SALIMA,Eastern and Southern Africa,-13.75,34.58,503,lat-13.875_long34.625.txt,lat-13.625_long34.625.txt,,
+539,MALAWI,TSANGANO,Eastern and Southern Africa,-15.18,34.62,1539,lat-15.125_long34.625.txt,,,
+540,MALAWI,ZOMBA,Eastern and Southern Africa,-15.38,35.33,937,lat-15.375_long35.375.txt,,,
+724,MOZAMBIQUE,ANGONIA TETE,Eastern and Southern Africa,-16.16,33.59,145,lat-16.125_long33.625.txt,,,
+726,MOZAMBIQUE,CHOKWE,Eastern and Southern Africa,-24.53,33,32,lat-24.625_long32.875.txt,lat-24.625_long33.125.txt,,
+728,MOZAMBIQUE,LICHINGA,Eastern and Southern Africa,-13.3,35.23,1289,lat-13.375_long35.125.txt,,,
+729,MOZAMBIQUE,MAPUPULO,Eastern and Southern Africa,-13.24,38.87,513,lat-13.125_long38.875.txt,,,
+731,MOZAMBIQUE,MOCUBA,Eastern and Southern Africa,-16.84,38.26,66,lat-16.875_long38.375.txt,,,
+732,MOZAMBIQUE,MORRUMBALA-ZAMBEZIA,Eastern and Southern Africa,-17.33,35.58,413,lat-17.375_long35.625.txt,,,
+733,MOZAMBIQUE,MOZAMBIQUE,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+734,MOZAMBIQUE,MUTARARA,Eastern and Southern Africa,-17.45,35.067,42,lat-17.375_long35.125.txt,,,
+735,MOZAMBIQUE,NAMIALO,Eastern and Southern Africa,-14.91,40,193,lat-14.875_long39.875.txt,lat-14.875_long40.125.txt,,
+736,MOZAMBIQUE,NAMPULA,Eastern and Southern Africa,-15.1,39.28,428,lat-15.125_long39.375.txt,,,
+737,MOZAMBIQUE,NHACOONGO,Eastern and Southern Africa,-24.49,34.75,107,lat-24.375_long34.625.txt,lat-24.375_long34.875.txt,,
+740,MOZAMBIQUE,SEMOL,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+741,MOZAMBIQUE,SUSSUNDENGA,Eastern and Southern Africa,-19.33,33.22,642,lat-19.375_long33.125.txt,,,
+742,MOZAMBIQUE,UMBELUZI,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+743,MOZAMBIQUE,USSUDENGA,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+752,NAMIBIA,MASHARE,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+753,NAMIBIA,MITKOMST RESEARCH STATION,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+754,NAMIBIA,RUNDA,Eastern and Southern Africa,-17.96,19.72,1107,lat-17.875_long19.625.txt,,,
+864,SOUTH AFRICA,BARBERTON,Eastern and Southern Africa,-25.79,31.06,979,lat-25.875_long31.125.txt,,,
+867,SOUTH AFRICA,FREIDENHEIM VALLEY,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+868,SOUTH AFRICA,FRIEDENHEIM VALLEY,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+870,SOUTH AFRICA,MPUMALANGA,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+871,SOUTH AFRICA,NELSPRUIT MPUMALANGA,Eastern and Southern Africa,-25.47,30.97,671,lat-25.375_long30.875.txt,,,
+873,SOUTH AFRICA,PANNAR GRAYTOWN,Eastern and Southern Africa,-29.07,30.58,1124,lat-29.125_long30.625.txt,,,
+874,SOUTH AFRICA,PETIT,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+875,SOUTH AFRICA,POTCHESFTROOM,Eastern and Southern Africa,-26.7,27.1,1341,lat-26.625_long27.125.txt,,,
+876,SOUTH AFRICA,TSHIOMBO,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+877,SOUTH AFRICA,VILJOONSKROON,Eastern and Southern Africa,-27.2,26.9,1341,lat-27.125_long26.875.txt,,,
+878,SOUTH AFRICA REP.,BETLEHEM,Eastern and Southern Africa,-28.25,28.33,1682,lat-28.375_long28.375.txt,lat-28.125_long28.375.txt,,
+880,SOUTH AFRICA REP.,EZOLIMO,Eastern and Southern Africa,-25.2,31.2,583,lat-25.125_long31.125.txt,,,
+881,SOUTH AFRICA REP.,FRIEDENHEI,Eastern and Southern Africa,-25.47,30.97,671,lat-25.375_long30.875.txt,,,
+882,SOUTH AFRICA REP.,GREYTOWN,Eastern and Southern Africa,-29.02,30.6,1288,lat-29.125_long30.625.txt,,,
+884,SOUTH AFRICA REP.,LWAMONGO,Eastern and Southern Africa,-23.03,30.33,958,lat-23.125_long30.375.txt,,,
+885,SOUTH AFRICA REP.,NELSPRUIT,Eastern and Southern Africa,-25.47,30.97,671,lat-25.375_long30.875.txt,,,
+886,SOUTH AFRICA REP.,POTCHEFSTROOM,Eastern and Southern Africa,-26.67,27.07,1382,lat-26.625_long27.125.txt,,,
+887,SOUTH AFRICA REP.,SETLAGOLE,Eastern and Southern Africa,-26.28,25.12,1231,lat-26.375_long25.125.txt,,,
+892,SWAZILAND,BIG-BEND,Eastern and Southern Africa,-26.82,31.93,115,lat-26.875_long31.875.txt,,,
+893,SWAZILAND,LES,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+895,SWAZILAND,LUVE,Eastern and Southern Africa,-26.281,31.505,513,lat-26.375_long31.625.txt,,,
+896,SWAZILAND,MALKERNS,Eastern and Southern Africa,-26.553,31.165,747,lat-26.625_long31.125.txt,,,
+897,SWAZILAND,MANGCONGO,Eastern and Southern Africa,-26.57,30.85,1435,lat-26.625_long30.875.txt,,,
+898,SWAZILAND,NHLANGANO,Eastern and Southern Africa,-27.11,31.216,1065,lat-27.125_long31.125.txt,,,
+899,SWAZILAND,SHEWULA,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+900,SWAZILAND,SWAZILAND,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+904,TANZANIA,AFSF-ARUSHA,Eastern and Southern Africa,-3.3658,36.6745,1415,lat-3.375_long36.625.txt,,,
+905,TANZANIA,ARUSHA,Eastern and Southern Africa,-3.18,36.7,1995,lat-3.125_long36.625.txt,,,
+906,TANZANIA,ARUSHA SEED FARM AFSF,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+907,TANZANIA,ARUSHA TAN,Eastern and Southern Africa,-3.36,36.67,1415,lat-3.375_long36.625.txt,,,
+908,TANZANIA,CHOLIMA,Eastern and Southern Africa,-7.43,37.7,151,lat-7.375_long37.625.txt,,,
+909,TANZANIA,CHOLLIMA,Eastern and Southern Africa,-7.43,37.7,151,lat-7.375_long37.625.txt,,,
+911,TANZANIA,DAKAWA,Eastern and Southern Africa,-7.43,37.7,151,lat-7.375_long37.625.txt,,,
+912,TANZANIA,ILONGA,Eastern and Southern Africa,-6.77,37.03,554,lat-6.875_long37.125.txt,,,
+913,TANZANIA,INYALA,Eastern and Southern Africa,-8.867,33.633,1582,lat-8.875_long33.625.txt,,,
+914,TANZANIA,KATRIN,Eastern and Southern Africa,-8.133,36.683,262,lat-8.125_long36.625.txt,,,
+915,TANZANIA,KATRIN1,Eastern and Southern Africa,-8.13,36.68,262,lat-8.125_long36.625.txt,,,
+916,TANZANIA,KATRIN2,Eastern and Southern Africa,-8.13,36.68,262,lat-8.125_long36.625.txt,,,
+917,TANZANIA,KATRIN-IFAKARA,Eastern and Southern Africa,-8.13,36.68,262,lat-8.125_long36.625.txt,,,
+918,TANZANIA,LAMBO,Eastern and Southern Africa,-3.23,37.88,935,lat-3.125_long37.875.txt,,,
+919,TANZANIA,MARUKU,Eastern and Southern Africa,-1.338,32.786,1133,lat-1.375_long32.875.txt,,,
+920,TANZANIA,MBULUMBULU,Eastern and Southern Africa,-3.25,35.8,1645,lat-3.375_long35.875.txt,lat-3.125_long35.875.txt,,
+921,TANZANIA,MLINGANO,Eastern and Southern Africa,-5.07,38.92,100,lat-5.125_long38.875.txt,,,
+922,TANZANIA,MONDULI,Eastern and Southern Africa,-3.3,36.45,1504,lat-3.375_long36.375.txt,,,
+923,TANZANIA,MOROGORO,Eastern and Southern Africa,-6.83,37.65,517,lat-6.875_long37.625.txt,,,
+925,TANZANIA,NGARAMTONI,Eastern and Southern Africa,-3.36,36.67,1415,lat-3.375_long36.625.txt,,,
+926,TANZANIA,NGARAMTONI-ARUSHA,Eastern and Southern Africa,-3.36,36.67,1415,lat-3.375_long36.625.txt,,,
+928,TANZANIA,SELIAN,Eastern and Southern Africa,-3.22,36.37,1756,lat-3.125_long36.375.txt,,,
+929,TANZANIA,TABORA,Eastern and Southern Africa,-5.02,32.8,1192,lat-5.125_long32.875.txt,,,
+930,TANZANIA,TANZANIA,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+931,TANZANIA,TUMBI,Eastern and Southern Africa,-5.07,32.73,1162,lat-5.125_long32.625.txt,,,
+932,TANZANIA,TUMBI-TABORA,Eastern and Southern Africa,-5.07,32.73,1162,lat-5.125_long32.625.txt,,,
+933,TANZANIA,UKIRIGURU,Eastern and Southern Africa,-2.719,33.024,1220,lat-2.625_long33.125.txt,,,
+935,TANZANIA,WERUWERU,Eastern and Southern Africa,-3.317,37.25,984,lat-3.375_long37.125.txt,lat-3.375_long37.375.txt,,
+951,UGANDA,BULEGENI,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+952,UGANDA,BULENGENI,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+953,UGANDA,KAMAYANMIGGO,Eastern and Southern Africa,-0.25,31.25,1322,lat-0.375_long31.125.txt,lat-0.125_long31.125.txt,lat-0.375_long31.375.txt,lat-0.125_long31.375.txt
+954,UGANDA,KAMENYAMIGGO,Eastern and Southern Africa,-0.25,31.25,1322,lat-0.375_long31.125.txt,lat-0.125_long31.125.txt,lat-0.375_long31.375.txt,lat-0.125_long31.375.txt
+957,UGANDA,LIKONDESONGEA,Eastern and Southern Africa,-10.66,35.58,1026,lat-10.625_long35.625.txt,,,
+959,UGANDA,MSK,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+960,UGANDA,NAARI,Eastern and Southern Africa,0.5333,34.1167,1161,lat0.625_long34.125.txt,,,
+961,UGANDA,NAMULONGE,Eastern and Southern Africa,0.53,32.58,1192,lat0.625_long32.625.txt,,,
+962,UGANDA,NAMULONGE UGA,Eastern and Southern Africa,0.53,32.58,1192,lat0.625_long32.625.txt,,,
+963,UGANDA,SERERE,Eastern and Southern Africa,1.517,33.45,1106,lat1.625_long33.375.txt,,,
+965,UGANDA,UGANDA,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+1020,ZAIRE,MVUAZI,Eastern and Southern Africa,-5.45,14.9,430,lat-5.375_long14.875.txt,,,
+1021,ZAMBIA,CHISAMBA,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+1022,ZAMBIA,GOLDEN VALLEY,Eastern and Southern Africa,-14.17,28.37,1173,lat-14.125_long28.375.txt,,,
+1023,ZAMBIA,KASAMA,Eastern and Southern Africa,-10.1,31.1,1352,lat-10.125_long31.125.txt,,,
+1024,ZAMBIA,KASAMA MISANFU,Eastern and Southern Africa,-10.2,31.1,1377,lat-10.125_long31.125.txt,,,
+1025,ZAMBIA,KATUBA,Eastern and Southern Africa,-15.17,28.23,1114,lat-15.125_long28.125.txt,,,
+1026,ZAMBIA,KUTUMANI,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+1027,ZAMBIA,LYEMPE,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+1028,ZAMBIA,MAGOBO,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+1029,ZAMBIA,MAGOYE,Eastern and Southern Africa,-15.526,27.45,978,lat-15.625_long27.375.txt,,,
+1030,ZAMBIA,MANSA,Eastern and Southern Africa,-11.12,28.53,1070,lat-11.125_long28.625.txt,,,
+1031,ZAMBIA,MASUMBA,Eastern and Southern Africa,-13.16,31.58,605,lat-13.125_long31.625.txt,,,
+1032,ZAMBIA,MISAMFU,Eastern and Southern Africa,-10.2,31.1,1377,lat-10.125_long31.125.txt,,,
+1034,ZAMBIA,MOUNT MAKULU,Eastern and Southern Africa,-15.5,28.3,1299,lat-15.625_long28.375.txt,lat-15.375_long28.375.txt,,
+1036,ZAMBIA,MSEKERA,Eastern and Southern Africa,-13.38,32.39,770,lat-13.375_long32.375.txt,,,
+1037,ZAMBIA,NANGA,Eastern and Southern Africa,-15.767,27.92,978,lat-15.875_long27.875.txt,,,
+1038,ZAMBIA,SESHEKE,Eastern and Southern Africa,-17.28,24.18,994,lat-17.375_long24.125.txt,,,
+1039,ZAMBIA,ZAMBIA,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+1040,ZAMBIA,ZAMSEED,Eastern and Southern Africa,-14.2,28.4,1178,lat-14.125_long28.375.txt,,,
+1041,ZAMBIA,ZAMSEED FARM,Eastern and Southern Africa,-14.2,28.4,1178,lat-14.125_long28.375.txt,,,
+1042,ZIMBABWE,ARCTURUS,Eastern and Southern Africa,-17.783,31.317,1375,lat-17.875_long31.375.txt,,,
+1043,ZIMBABWE,AREX HARARE,Eastern and Southern Africa,-17.8,31.1,1513,lat-17.875_long31.125.txt,,,
+1044,ZIMBABWE,ART FARM HARARE,Eastern and Southern Africa,-17.8,31.05,1250,lat-17.875_long31.125.txt,,,
+1045,ZIMBABWE,CHIREDZI,Eastern and Southern Africa,-21.02,31.58,427,lat-21.125_long31.625.txt,,,
+1046,ZIMBABWE,CIMMYT HARARE,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+1048,ZIMBABWE,DRSS HARARE,Eastern and Southern Africa,-17.8,31.1,1513,lat-17.875_long31.125.txt,,,
+1049,ZIMBABWE,GLENDALE,Eastern and Southern Africa,-17.08,31.03,1284,lat-17.125_long31.125.txt,,,
+1050,ZIMBABWE,GWEBI,Eastern and Southern Africa,-17.7,30.85,1441,lat-17.625_long30.875.txt,,,
+1051,ZIMBABWE,HARARE,Eastern and Southern Africa,-17.8,31.05,1498,lat-17.875_long31.125.txt,,,
+1052,ZIMBABWE,KADOMA,Eastern and Southern Africa,-18.32,30.9,1325,lat-18.375_long30.875.txt,,,
+1054,ZIMBABWE,MAKAHOLI,Eastern and Southern Africa,-19.83,30.78,1207,lat-19.875_long30.875.txt,,,
+1055,ZIMBABWE,MAKHOHOLI,Eastern and Southern Africa,-19.83,30.78,1207,lat-19.875_long30.875.txt,,,
+1056,ZIMBABWE,MARONDERA,Eastern and Southern Africa,-18.8,31.6,1084,lat-18.875_long31.625.txt,,,
+1057,ZIMBABWE,MATOPOS,Eastern and Southern Africa,-20.38,28.5,1380,lat-20.375_long28.375.txt,lat-20.375_long28.625.txt,,
+1058,ZIMBABWE,MAZOWE,Eastern and Southern Africa,-17.51,30.91,1370,lat-17.625_long30.875.txt,,,
+1060,ZIMBABWE,PANNAR,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+1061,ZIMBABWE,PIONEER,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
+1063,ZIMBABWE,RATTRAY,Eastern and Southern Africa,-17.7,31.2,1403,lat-17.625_long31.125.txt,,,
+1064,ZIMBABWE,RATTRAY ARNOLD,Eastern and Southern Africa,-17.67,31.17,1458,lat-17.625_long31.125.txt,,,
+1065,ZIMBABWE,RATTRAY FARM,Eastern and Southern Africa,-17.7,31.2,1403,lat-17.625_long31.125.txt,,,
+1066,ZIMBABWE,RUWA,Eastern and Southern Africa,-17.89,31.24,1554,lat-17.875_long31.125.txt,,,
+1067,ZIMBABWE,SAVE VALLEY,Eastern and Southern Africa,-20.35,32.33,443,lat-20.375_long32.375.txt,,,
+1068,ZIMBABWE,SHAMVA ZIM,Eastern and Southern Africa,-17.32,31.57,1106,lat-17.375_long31.625.txt,,,
+1069,ZIMBABWE,ZIMBABWE,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
