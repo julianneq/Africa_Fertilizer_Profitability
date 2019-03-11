@@ -3,7 +3,8 @@ import arcpy as ap
 from convertDBFtoCSV import convertDBFtoCSV
 
 def processSoilData():
-    '''Resamples soil data from 250m to 1000m using bilinear interpolation'''
+    '''Resamples soil data from 250m to 1000m using bilinear interpolation for continuous data, nearest neighbor interpolation
+    for discrete data. Then finds the soil values of the cell each site is inside.'''
 
     #find the working directory
     workingDir = os.getcwd()
