@@ -1,4 +1,4 @@
-locationid,newLong,newLat,oldLong,oldLat
-524,33.935,-9.71,34,-9.75
-529,34.93,-14.08,34.95,-14.08
-919,32.61,-1.47,32.786,-1.338
+locationid,reportedLong,reportedLat,closestLong,closestLat
+524,34,-9.75,33.935,-9.71
+529,34.95,-14.08,34.93,-14.08
+919,32.786,-1.338,32.61,-1.47
