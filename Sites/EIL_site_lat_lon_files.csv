@@ -40,12 +40,12 @@ LocationID,Country,Location,Region,Latitude,Longitude,ElevM,File1,File2,File3,Fi
 517,LESOTHO,MASERU,Eastern and Southern Africa,-29.28,27.5,1503,lat-29.375_long27.375.txt,lat-29.375_long27.625.txt,,
 520,LESOTHO,NYAKOSOBA,Eastern and Southern Africa,-29.55,27.78,1942,lat-29.625_long27.875.txt,,,
 521,LESOTHO,TEYATEYANENG,Eastern and Southern Africa,-29.15,27.75,1688,lat-29.125_long27.625.txt,lat-29.125_long27.875.txt,,
-524,MALAWI,BAKA,Eastern and Southern Africa,-9.75,34,477,lat-9.875_long33.875.txt,lat-9.625_long33.875.txt,lat-9.875_long34.125.txt,lat-9.625_long34.125.txt
+524,MALAWI,BAKA,Eastern and Southern Africa,-9.71,33.935,477,lat-9.875_long33.875.txt,lat-9.625_long33.875.txt,lat-9.875_long34.125.txt,lat-9.625_long34.125.txt
 525,MALAWI,BAKA RESEARCH STATION,Eastern and Southern Africa,0,0,0,lat-0.125_long-0.125.txt,lat0.125_long-0.125.txt,lat-0.125_long0.125.txt,lat0.125_long0.125.txt
 526,MALAWI,BEMBEKE,Eastern and Southern Africa,-14.17,34.43,1054,lat-14.125_long34.375.txt,,,
 527,MALAWI,BOLERO,Eastern and Southern Africa,-10.983,33.75,1099,lat-10.875_long33.625.txt,lat-10.875_long33.875.txt,,
 528,MALAWI,BVUMBWE,Eastern and Southern Africa,-15.92,35.07,1172,lat-15.875_long35.125.txt,,,
-529,MALAWI,BWANJE,Eastern and Southern Africa,-14.08,34.95,474,lat-14.125_long34.875.txt,,,
+529,MALAWI,BWANJE,Eastern and Southern Africa,-14.08,34.93,474,lat-14.125_long34.875.txt,,,
 530,MALAWI,CHITALA,Eastern and Southern Africa,-13.13,34.07,769,lat-13.125_long34.125.txt,,,
 531,MALAWI,CHITEDZE,Eastern and Southern Africa,-13.98,33.63,1140,lat-13.875_long33.625.txt,,,
 532,MALAWI,LUNYANGWA,Eastern and Southern Africa,-11.45,33.917,1290,lat-11.375_long33.875.txt,,,
