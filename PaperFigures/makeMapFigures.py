@@ -5,7 +5,8 @@ import seaborn.apionly as sns
 import matplotlib as mpl
 import os
 
-os.environ["PROJ_LIB"] = 'C:\\ProgramData\\Anaconda3\\envs\\test\\Library\\share'
+#os.environ["PROJ_LIB"] = 'C:\\ProgramData\\Anaconda3\\envs\\test\\Library\\share'
+os.environ['PROJ_LIB']='C:/Users/Julianne Quinn/Anaconda3/pkgs/proj4-5.2.0-hfa6e2cd_1001/Library/share'
 
 from mpl_toolkits.basemap import Basemap
 
@@ -25,7 +26,7 @@ robustCDFs = np.loadtxt('AfricaSites_Sim_Shortlist_robust_fgls_lev_bestmod.csv',
 # locations of sites with simulated VCRs
 lat = np.arange(-39.875,40.125,0.25)
 lon = np.arange(-19.875,55.125,0.25)
-selectSites = np.array([598.0,3200.0,3593.0,8271.0,9166.0,9331.0,10168.0,10760.0,10976.0,13964.0])
+selectSites = np.array([1585.0, 1347.0, 2919.0, 5362.0, 8475.0, 9527.0, 10040.0, 12982.0, 13584.0, 15860.0])
 selectData = np.zeros([len(selectSites),np.shape(data)[1]])
 for i in range(len(selectSites)):
     row = [k for k in range(len(data[:,0])) if data[k,0] == selectSites[i]]
@@ -69,7 +70,7 @@ def makeFigure2(simVCR, selectSites, selectData, label_xs, label_ys, colors, est
     for i in range(len(colors)):
         ax.step(np.sort(simVCR[:,i]), P, c=colors[i], label=str(int(selectSites[i])), linewidth=2)
         
-    ax.set_xlim([-0.5,3.25])
+    ax.set_xlim([-4.5,10.5])
     ax.set_ylim([0,1])
     ax.plot([0,0],[0,1],linewidth=2, linestyle='--', c='k')
     
@@ -137,7 +138,7 @@ def makeFigure4(data, lon, lat):
             array[row,col] = 1
         elif data[i,3] == 1:
             array[row,col] = 2
-        else:
+        elif data[i,4] == 1:
             array[row,col] = 3
     
     array_mask = np.ma.masked_invalid(array)
@@ -182,9 +183,11 @@ def makeFigure5(data, lon, lat, estimator):
         row = int((data[i,5]-np.min(lat))/0.25)
         col = int((data[i,6]-np.min(lon))/0.25)
         if estimator == 'naive':
-            array[row,col] = int(data[i,8]-1)
+            if np.isnan(data[i,8]) == False:
+                array[row,col] = int(data[i,8]-1)
         else:
-            array[row,col] = int(data[i,7]-1)
+            if np.isnan(data[i,7]) == False:
+                array[row,col] = int(data[i,7]-1)
         
     array_mask = np.ma.masked_invalid(array)
     x, y = np.meshgrid(lon, lat)
