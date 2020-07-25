@@ -213,8 +213,8 @@ def makeSubplot(ax, variable, array, bounds, C, label, classes, colorbar, shrink
     
     return ax
     
-#makeFigure2(data, lat, lon, CDFs, selectSites, select_data, label_xs, label_ys, siteColors, True)
-#makeFigure2(data, lat, lon, CDFs, selectSites, select_data, label_xs, label_ys, siteColors, False)
-#makeFigure3_S4(data, lat, lon, 'Map_vcr_sim_probT_naive_robust_compare')
-#makeFigure3_S4(SI_data, lat, lon, 'Map_vcr_sim_probT_naive_robust_compare_samenaiveprofT')
+makeFigure2(data, lat, lon, CDFs, selectSites, select_data, label_xs, label_ys, siteColors, True)
+makeFigure2(data, lat, lon, CDFs, selectSites, select_data, label_xs, label_ys, siteColors, False)
+makeFigure3_S4(data, lat, lon, 'Map_vcr_sim_probT_naive_robust_compare')
+makeFigure3_S4(SI_data, lat, lon, 'Map_vcr_sim_probT_naive_robust_compare_samenaiveprofT')
 makeFigureS3(data, lat, lon)
