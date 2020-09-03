@@ -6,7 +6,7 @@ import statsmodels.api as sm
 import scipy.stats as ss
 from matplotlib import pyplot as plt
 
-def generateWeather(n):
+def generateWeather(nYears):
     '''Generates n-years of mean temperatures and precipitation amounts in 3 consecutive 30-day periods post planting date'''
 
     # range of historical data
@@ -26,94 +26,85 @@ def generateWeather(n):
         if database[j,3] == 2 and database[j,4] == 29:
             database[j,4] = 28
 
-        lastPlantDate = np.where(dates==datetime(2010,int(database[j,3]),int(database[j,4])))[0][0]
-        remainingDays = len(dates) - lastPlantDate + 1
-        if remainingDays < 30:
-            month1 = np.zeros([30,2])
-            month2 = np.zeros([30,2])
-            month3 = np.zeros([30,2])
-        elif remainingDays >= 30 and remainingDays < 60:
+        lastPlantDate = np.where(dates==datetime(2010,int(database[j,3]),int(database[j,4])))[0][0] # planting date in last year
+        remainingDays = len(dates) - lastPlantDate + 1 # number of days left in the calendar year
+        # initialize all months with 30 years; add an extra year if there are enough remaining days in 2010 for a full month
+        month1 = np.zeros([30,2])
+        month2 = np.zeros([30,2])
+        month3 = np.zeros([30,2])
+        month4 = np.zeros([30,2])
+        month5 = np.zeros([30,2])
+        if remainingDays >= 30: # 1st month has an extra year of data
             month1 = np.zeros([31,2])
-            month2 = np.zeros([30,2])
-            month3 = np.zeros([30,2])
-        elif remainingDays >= 60 and remainingDays < 90:
-            month1 = np.zeros([31,2])
+        elif remainingDays >= 60: # 1st 2 months have an extra year of data
             month2 = np.zeros([31,2])
-            month3 = np.zeros([30,2])
-        else:
-            month1 = np.zeros([31,2])
-            month2 = np.zeros([31,2])
+        elif remainingDays >= 90: # 1st 3 months have an extra year of data
             month3 = np.zeros([31,2])
+        elif remainingDays >= 120: # 1st 4 months have an extra year of data
+            month4 = np.zeros([31,2])
+        elif remainingDays >= 150: #all months have an extra year of data
+            month5 = np.zeros([31,2])
             
         # populate monthly data matrices
-        for i in range(np.shape(month1)[0]):
-            day1 = np.where(dates==datetime(1980+i,int(database[j,3]),int(database[j,4])))[0][0]
-            month1[i,0] = np.mean(data[day1:(day1+30),0])
-            month1[i,1] = np.sum(data[day1:(day1+30),1])
-            
-        for i in range(np.shape(month2)[0]):
-            day1 = np.where(dates==datetime(1980+i,int(database[j,3]),int(database[j,4])))[0][0]
-            month2[i,0] = np.mean(data[(day1+30):(day1+60),0])
-            month2[i,1] = np.sum(data[(day1+30):(day1+60),1])
-            
-        for i in range(np.shape(month3)[0]):
-            day1 = np.where(dates==datetime(1980+i,int(database[j,3]),int(database[j,4])))[0][0]
-            month3[i,0] = np.mean(data[(day1+60):(day1+90),0])
-            month3[i,1] = np.sum(data[(day1+60):(day1+90),1])
+        months = [month1, month2, month3, month4, month5]
+        nMonths = len(months)
+        for k in range(nMonths): # loop through 5 months
+            for i in range(np.shape(months[k])[0]): # loop through 30 or 31 years
+                day1 = np.where(dates==datetime(1980+i,int(database[j,3]),int(database[j,4])))[0][0] # planting date in year i
+                months[k][i,0] = np.mean(data[(day1+30*k):(day1+30*(k+1)),0]) # mean temperature
+                months[k][i,1] = np.sum(data[(day1+30*k):(day1+30*(k+1)),1]) # total precipitation
             
         # fit linear trend to temperature data and calculate temperature anomalies from trend
-        months = [month1, month2, month3]
-        pars = []
-        for i in range(len(months)):
+        pars = [] # parameters of linear trend model for each month
+        for i in range(nMonths):
             months[i][:,0], tempPars = removeTrend(months[i][:,0])
             pars.append(tempPars)
             
         # fit normal distribution to temperature anomalies, gamma distribution to total precipitation
         # and use a Gaussian copula to capture correlation across the 2 variables each month
-        mus = np.zeros(3) # should be zero because calculating anomalies
-        sigmas = np.zeros(3)
-        for i in range(len(months)):
+        mus = np.zeros(nMonths) # should be zero because calculating anomalies
+        sigmas = np.zeros(nMonths)
+        for i in range(nMonths):
             mus[i], sigmas[i] = ss.norm.fit(months[i][:,0], floc=0) # freeze location parameter at 0 because fitting anomalies
         
-        alphas = np.zeros(3)
-        betas = np.zeros(3)
-        for i in range(len(months)):
+        alphas = np.zeros(nMonths)
+        betas = np.zeros(nMonths)
+        for i in range(nMonths):
             # change any monthly total precipitation amounts of 0 to 0.1 so there is no error in estimation
             months[i][:,1] = np.where(months[i][:,1]>0.0, months[i][:,1], 0.1)
             alphas[i], loc, betas[i] = ss.gamma.fit(months[i][:,1], floc=0) # freeze location parameter at 0
             
         # fit bivariate Gaussian copula to monthly temperature anomalies and total monthly precipitation in each 30-day period post plant date
         percentiles = []
-        for i in range(len(months)):
+        for i in range(nMonths):
             tempPcts = ss.norm.cdf(months[i][:,0], loc=0, scale=sigmas[i]) # percentiles of normal marginal
             pptPcts = ss.gamma.cdf(months[i][:,1], a=alphas[i], loc=0, scale=betas[i]) # percentiles of gamma marginal     
             percentiles.append(np.array([tempPcts,pptPcts]))
             
         zscores = []
-        rhos = np.zeros(3)
-        for i in range(len(percentiles)):
+        rhos = np.zeros(nMonths)
+        for i in range(nMonths):
             temp_zs = ss.norm.ppf(percentiles[i][0], loc=0, scale=1) # z-scores of standard normal
             ppt_zs = ss.norm.ppf(percentiles[i][1], loc=0, scale=1) # z-scores of standard normal
             zscores.append(np.array([temp_zs,ppt_zs]))
             rhos[i] = np.corrcoef(percentiles[i][0],percentiles[i][1])[0][1] # Spearman rank correlation
         
-        # generate bivariate 3-period time series of z-scores from bivariate Gaussian copula
+        # generate bivariate 5-period time series of z-scores from bivariate Gaussian copula
         # generate z1 (1st period) unconditionally (so each year assumed independent), then calculate z2 and z3 from
-        # z2 = A1*z1 + B1*eps ; z3 = A2*z2 + B2*eps (so within-year, period-to-period correlation is preserved)
-        A1, B1 = calcA_and_B(zscores[0], zscores[1])
-        A2, B2 = calcA_and_B(zscores[1], zscores[2])
+        # z2 = A*z1 + B*eps ; z3 = A*z2 + B*eps etc. (so within-year, period-to-period correlation is preserved)
+        A, B = calcA_and_B(zscores)
         
-        z1 = np.random.multivariate_normal(np.zeros(2),np.array([[1,rhos[0]],[rhos[0],1]]),n)
+        z1 = np.random.multivariate_normal(np.zeros(2),np.array([[1,rhos[0]],[rhos[0],1]]),nYears)
         z2 = np.zeros(np.shape(z1))
-        for i in range(n):
-            z2[i] = np.dot(A1,z1[i,:]) + np.dot(B1,np.random.normal(0,1,2))
-            
-        z3 = np.zeros(np.shape(z2))
-        for i in range(n):
-            z3[i] = np.dot(A2,z2[i,:]) + np.dot(B2,np.random.normal(0,1,2))
+        z3 = np.zeros(np.shape(z1))
+        z4 = np.zeros(np.shape(z1))
+        z5 = np.zeros(np.shape(z1))
+        zs = [z1, z2, z3, z4, z5]
+        for k in range(nMonths-1):
+            for i in range(nYears):
+                zs[k+1][i] = np.dot(A,zs[k][i,:]) + np.dot(B,np.random.normal(0,1,2))
         
-        # transform z-scores back to temperature anomalies and precipitation amounts        
-        zs = [z1, z2, z3]
+        # transform z-scores back to temperature anomalies and precipitation amounts
         tempData = []
         precipData = []
         for i in range(len(zs)):
@@ -125,91 +116,76 @@ def generateWeather(n):
             precip = ss.gamma.ppf(pptPcts, a=alphas[i], loc=0, scale=betas[i])
             precipData.append(precip)
                 
-            #compareWeather(months, tempData, precipData, sigmas, alphas, betas, j)
+        #compareWeather(months, tempData, precipData, sigmas, alphas, betas, j)
             
-        # add mean temperature predicted by trend for 2017 to simulated temperature anomalies
+        # add mean temperature predicted by trend for 2019 to simulated temperature anomalies
         for i in range(len(tempData)):
-            tempData[i] = tempData[i] + pars[i][0]*37 + pars[i][1] # 37 years since 1980
+            tempData[i] = tempData[i] + pars[i][0]*(2019-1980) + pars[i][1]
             
         # write weather data to file - one file for mean monthly temperatures and one for total monthly precipitation amounts
-        # each row is a different simulated year with 3 columns for the 3 30-day periods post plant date
-        f = open('Weather/synthetic/lat' + str(np.round(database[j,1],3)) + '_long' + str(np.round(database[j,2],3)) + '_precip.txt','w')
-        for i in range(n):
-            f.write(str(np.round(precipData[0][i],1)) + ' ' + str(np.round(precipData[1][i],1)) + ' ' + str(np.round(precipData[2][i],1)) + '\n')
+        # each row is a different simulated year with 5 columns for the 5 30-day periods post plant date
+        tempMatrix = tempData[0]
+        for i in range(nMonths-1):
+            tempMatrix = np.column_stack((tempMatrix,tempData[i+1]))
             
-        f.close()
-        
-        f = open('Weather/synthetic/lat' + str(np.round(database[j,1],3)) + '_long' + str(np.round(database[j,2],3)) + '_temp.txt','w')
-        for i in range(n):
-            f.write(str(np.round(tempData[0][i],1)) + ' ' + str(np.round(tempData[1][i],1)) + ' ' + str(np.round(tempData[2][i],1)) + '\n')
+        np.savetxt('Weather/synthetic/lat' + str(np.round(database[j,1],3)) + '_long' + str(np.round(database[j,2],3)) + '_temp.txt',
+                   tempMatrix)
             
-        f.close()        
+        precipMatrix = precipData[0]
+        for i in range(nMonths-1):
+            precipMatrix = np.column_stack((precipMatrix,precipData[i+1]))
+            
+        np.savetxt('Weather/synthetic/lat' + str(np.round(database[j,1],3)) + '_long' + str(np.round(database[j,2],3)) + '_precip.txt',
+                   precipMatrix)     
         
     return None
 
 def compareWeather(months, tempData, precipData, sigmas, alphas, betas, rowNo):
     fig = plt.figure()
-    ax = fig.add_subplot(3,2,1) # temp on left, precip on right; rows = months
-    ax.hist(months[0][:,0], color='b', alpha=0.5, density=True)
-    ax.hist(tempData[0], color='g', alpha=0.5, density=True)
-    maxT = max(np.max(tempData[0]),np.max(months[0][:,0]))
-    minT = min(np.min(tempData[0]),np.min(months[0][:,0]))
-    x = np.arange(minT, maxT, (maxT-minT)/100.0)
-    ax.plot(x,ss.norm.pdf(x, loc=0, scale=sigmas[0]),c='k',linewidth=2)
-    ax.set_title('Temperature Month 1')
     
-    ax = fig.add_subplot(3,2,2) # temp on left, precip on right; rows = months
-    ax.hist(months[0][:,1], color='b', alpha=0.5, density=True)
-    ax.hist(precipData[0], color='g', alpha=0.5, density=True)
-    maxP = max(np.max(precipData[0]),np.max(months[0][:,1]))
-    minP = min(np.min(precipData[0]),np.min(months[0][:,1]))
-    x = np.arange(minP, maxP, (maxP-minP)/100.0)
-    ax.plot(x,ss.gamma.pdf(x, a=alphas[0], loc=0, scale=betas[0]),c='k',linewidth=2)
-    ax.set_title('Precipitation Month 1')
-    
-    ax = fig.add_subplot(3,2,3) # temp on left, precip on right; rows = months
-    ax.hist(months[1][:,0], color='b', alpha=0.5, density=True)
-    ax.hist(tempData[1], color='g', alpha=0.5, density=True)
-    maxT = max(np.max(tempData[1]),np.max(months[1][:,0]))
-    minT = min(np.min(tempData[1]),np.min(months[1][:,0]))
-    x = np.arange(minT, maxT, (maxT-minT)/100.0)
-    ax.plot(x,ss.norm.pdf(x, loc=0, scale=sigmas[1]),c='k',linewidth=2)
-    ax.set_title('Temperature Month 2')
-    
-    ax = fig.add_subplot(3,2,4) # temp on left, precip on right; rows = months
-    ax.hist(months[1][:,1], color='b', alpha=0.5, density=True)
-    ax.hist(precipData[1], color='g', alpha=0.5, density=True)
-    maxP = max(np.max(precipData[1]),np.max(months[1][:,1]))
-    minP = min(np.min(precipData[1]),np.min(months[1][:,1]))
-    x = np.arange(minP, maxP, (maxP-minP)/100.0)
-    ax.plot(x,ss.gamma.pdf(x, a=alphas[1], loc=0, scale=betas[1]),c='k',linewidth=2)
-    ax.set_title('Precipitation Month 2')
-    
-    ax = fig.add_subplot(3,2,5) # temp on left, precip on right; rows = months
-    ax.hist(months[2][:,0], color='b', alpha=0.5, density=True)
-    ax.hist(tempData[2], color='g', alpha=0.5, density=True)
-    maxT = max(np.max(tempData[2]),np.max(months[2][:,0]))
-    minT = min(np.min(tempData[2]),np.min(months[2][:,0]))
-    x = np.arange(minT, maxT, (maxT-minT)/100.0)
-    ax.plot(x,ss.norm.pdf(x, loc=0, scale=sigmas[2]),c='k',linewidth=2)
-    ax.set_title('Temperature Month 3')
-    
-    ax = fig.add_subplot(3,2,6) # temp on left, precip on right; rows = months
-    ax.hist(months[2][:,1], color='b', alpha=0.5, density=True, label='Historical')
-    ax.hist(precipData[2], color='g', alpha=0.5, density=True, label='Synthetic')
-    maxP = max(np.max(precipData[2]),np.max(months[2][:,1]))
-    minP = min(np.min(precipData[2]),np.min(months[2][:,1]))
-    x = np.arange(minP, maxP, (maxP-minP)/100.0)
-    ax.plot(x,ss.gamma.pdf(x, a=alphas[2], loc=0, scale=betas[2]),c='k',linewidth=2)
-    ax.set_title('Precipitation Month 3')
+    for i in range(len(months)):
+        ax = fig.add_subplot(2,5,i+1) # temp on top, precip on bottom; columns = months
+        makeTempSubplot(ax, months, tempData, sigmas, i+1)
+        
+        ax = fig.add_subplot(2,5,i+6)
+        if i != len(months)-1:
+            makePrecipSubplot(ax, months, precipData, alphas, betas, i+1)
+        else:
+            makePrecipSubplot(ax, months, precipData, alphas, betas, i+1, True)
     
     handles, labels = plt.gca().get_legend_handles_labels()
-    fig.subplots_adjust(bottom=0.15)
+    fig.subplots_adjust(bottom=0.1)
     fig.legend(handles, labels, loc='lower center',ncol=2,fontsize=16,frameon=True)
-    fig.set_size_inches([10.5,11.5])
+    fig.set_size_inches([19.2,9.6])
     fig.savefig('Weather/validation/Row' + str(rowNo) + '.png')
     fig.clf()
         
+    return None
+
+def makeTempSubplot(ax, months, tempData, sigmas, monthNo):
+    ax.hist(months[monthNo-1][:,0], color='b', alpha=0.5, density=True)
+    ax.hist(tempData[monthNo-1], color='g', alpha=0.5, density=True)
+    maxT = max(np.max(tempData[monthNo-1]),np.max(months[monthNo-1][:,0]))
+    minT = min(np.min(tempData[monthNo-1]),np.min(months[monthNo-1][:,0]))
+    x = np.arange(minT, maxT, (maxT-minT)/100.0)
+    ax.plot(x,ss.norm.pdf(x, loc=0, scale=sigmas[monthNo-1]),c='k',linewidth=2)
+    ax.set_title('Temperature Month ' + str(monthNo))
+    
+    return None
+    
+def makePrecipSubplot(ax, months, precipData, alphas, betas, monthNo, label=False):
+    if label == False:
+        ax.hist(months[monthNo-1][:,1], color='b', alpha=0.5, density=True)
+        ax.hist(precipData[monthNo-1], color='g', alpha=0.5, density=True)
+    else:
+        ax.hist(months[monthNo-1][:,1], color='b', alpha=0.5, density=True, label='Historical')
+        ax.hist(precipData[monthNo-1], color='g', alpha=0.5, density=True, label='Synthetic')        
+    maxP = max(np.max(precipData[monthNo-1]),np.max(months[monthNo-1][:,1]))
+    minP = min(np.min(precipData[monthNo-1]),np.min(months[monthNo-1][:,1]))
+    x = np.arange(minP, maxP, (maxP-minP)/100.0)
+    ax.plot(x,ss.gamma.pdf(x, a=alphas[monthNo-1], loc=0, scale=betas[monthNo-1]),c='k',linewidth=2)
+    ax.set_title('Precipitation Month ' + str(monthNo))
+    
     return None
     
 def removeTrend(y):
@@ -223,19 +199,27 @@ def removeTrend(y):
 
 	return z, pars
  
-def calcA_and_B(X1, X2):
-    X = np.transpose(np.concatenate((X1,X2),1)) # combine both months to calculate covariance matrix
+def calcA_and_B(zscores):
+    X = np.transpose(zscores[0])
+    # combine all months to calculate covariance matrix
+    for i in range(len(zscores)-1):
+        X = np.concatenate((X, np.transpose(zscores[i+1])),0)
+    
     S = np.cov(np.transpose(X)) # temp and precip covariance matrix across both months
     
+    # remove last year of months with an extra year so they're all the same dimension for computing lag-1 covariance
+    minYears = len(zscores[-1][0,:])
+    X = np.transpose(zscores[0][:,0:minYears])
+    # combine all months to calculate covariance matrix
+    for i in range(len(zscores)-1):
+        X = np.concatenate((X, np.transpose(zscores[i+1][:,0:minYears])),0)
+    
     S1 = np.zeros(np.shape(S)) # lag=one-month temp and precip covariance matrix
-    # if less columns in second month because it didn't complete before end of 2010, remove last row of X1
-    if np.shape(X2)[1] < np.shape(X1)[1]:
-        X1 = X1[:,0:-1]
 
-    S1[0,0] = np.cov(X2[0,:],X1[0,:])[0][1] # temp w/ previous temp
-    S1[0,1] = np.cov(X2[0,:],X1[1,:])[0][1] # temp w/ previous precip
-    S1[1,0] = np.cov(X2[1,:],X1[0,:])[0][1] # precip w/ previous temp
-    S1[1,1] = np.cov(X2[1,:],X1[1,:])[0][1] # precip w/ previous precip
+    S1[0,0] = np.cov(X[minYears::,0],X[0:-minYears,0])[0][1] # temp w/ previous temp
+    S1[0,1] = np.cov(X[minYears::,0],X[0:-minYears,1])[0][1] # temp w/ previous precip
+    S1[1,0] = np.cov(X[minYears::,1],X[0:-minYears,0])[0][1] # precip w/ previous temp
+    S1[1,1] = np.cov(X[minYears::,1],X[0:-minYears,1])[0][1] # precip w/ previous precip
     
     A = np.dot(S1,np.linalg.inv(S))
     # check if positive definite
