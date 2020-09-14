@@ -38,11 +38,11 @@ for i in range(len(selectSites)):
 #siteColors = ['#33a02c','#fb9a99','#ff7f00','#cab2d6','#1f78b4','#fdbf6f','#b2df8a','#e31a1c','#a6cee3','#6a3d9a']
 siteColors = ['#33a02c','#a6cee3','#cab2d6','#e31a1c','#b2df8a','#1f78b4','#6a3d9a','#ff7f00','#fdbf6f','#fb9a99']
 label_ys = np.array(select_data['lat'])
-label_ys[1] = label_ys[1] + 1.5
-label_xs = np.array(select_data['lon'] + 3.5)
-label_xs[[0,6,7,8,9]] = label_xs[[0,6,7,8,9]] - 7.0
+label_ys[1] = label_ys[1] + 1
+label_xs = np.array(select_data['lon'] + 1.5)
+label_xs[[0,6,7,8,9]] = label_xs[[0,6,7,8,9]] - 7
 label_xs[0] = label_xs[0] + 1
-label_xs[[8,9]] = label_xs[[8,9]] - 0.5
+label_xs[[8,9]] = label_xs[[8,9]] - 1
 
 def makeFigure2(data, lat, lon, simVCR, selectSites, select_data, label_xs, label_ys, colors, colorbar):
     
@@ -54,7 +54,8 @@ def makeFigure2(data, lat, lon, simVCR, selectSites, select_data, label_xs, labe
     sns.set()
     fig = plt.figure()
     ax = fig.add_subplot(1,2,1)
-    makeSubplot(ax, 'y_pred_sim_dif_probT_robust', array, bounds, C, 'Yield Difference (t/ha)', classes, colorbar, 1.0)
+    makeSubplot(ax, 'y_pred_sim_dif_probT_robust', array, bounds, selectSites, select_data, label_xs, label_ys, \
+                C, 'Yield Difference (t/ha)', classes, colorbar, 1.0, True)
     
     # plot CDFs from each site
     ax = fig.add_subplot(1,2,2)
@@ -87,7 +88,7 @@ def makeFigure2(data, lat, lon, simVCR, selectSites, select_data, label_xs, labe
     
     return None
     
-def makeFigure3_S4(data, lat, lon, figname):
+def makeFigure3_S4(data, lat, lon, selectSites, select_data, label_xs, label_ys, figname):
     
     C1 = np.array([[178,24,43],[247,247,247],[209,229,240],[146,197,222],[67,147,195],[33,102,172],[5,48,97]])/255.0
     C2 = np.array([[228, 26, 28],[77, 175, 74],[55, 126, 184],[255, 127, 0]])/255.0
@@ -101,13 +102,16 @@ def makeFigure3_S4(data, lat, lon, figname):
     sns.set()
     fig = plt.figure()
     ax = fig.add_subplot(1,3,1)    
-    makeSubplot(ax, 'vcr_sim_probT_robust', robust_array, bounds, C1, 'Robust VCR', classes, True, 0.5)
+    makeSubplot(ax, 'vcr_sim_probT_robust', robust_array, bounds, selectSites, select_data, label_xs, label_ys, \
+                C1, 'Robust VCR', classes, True, 0.5)
     
     ax = fig.add_subplot(1,3,2)
-    makeSubplot(ax, 'vcr_sim_probT_naive', naive_array, bounds, C1, 'Naive VCR', classes, True, 0.5)
+    makeSubplot(ax, 'vcr_sim_probT_naive', naive_array, bounds, selectSites, select_data, label_xs, label_ys, C1, \
+                'Naive VCR', classes, True, 0.5)
     
     ax = fig.add_subplot(1,3,3)
-    makeSubplot(ax, 'class', class_array, bounds, C2, '', classes, True)
+    makeSubplot(ax, 'class', class_array, bounds, selectSites, select_data, label_xs, label_ys, \
+                C2, '', classes, True, 0.5)
     
     fig.set_size_inches([19, 9.6])
     fig.tight_layout()
@@ -116,7 +120,7 @@ def makeFigure3_S4(data, lat, lon, figname):
     
     return None
 
-def makeFigureS3(data, lat, lon):
+def makeFigureS3(data, lat, lon, selectSites, select_data, label_xs, label_ys):
     
     cmap = 'YlGnBu' # colormap for left panel
     classes =  [] # categorical classes - empty because plotting continuous values in left panel
@@ -131,10 +135,12 @@ def makeFigureS3(data, lat, lon):
     sns.set()
     fig = plt.figure()
     ax = fig.add_subplot(1,2,1)
-    makeSubplot(ax, 'y_pred_sim_dif_probT_robust', diff_array, bounds, cmap, 'Yield Difference (t/ha)', classes, True, 1.0)
+    makeSubplot(ax, 'y_pred_sim_dif_probT_robust', diff_array, bounds, selectSites, select_data, label_xs, label_ys, \
+                cmap, 'Yield Difference (t/ha)', classes, True, 1.0)
 
     ax = fig.add_subplot(1,2,2)
-    makeSubplot(ax, 'cr_sim_probT_robust', robust_array, bounds, C, '', labels, True, 1.0)
+    makeSubplot(ax, 'cr_sim_probT_robust', robust_array, bounds, selectSites, select_data, label_xs, label_ys, \
+                C, '', labels, True, 1.0)
 
     fig.set_size_inches([13, 5])
     fig.savefig('Map_y_pred_sim_dif_probT_cr_probT_robust.pdf')
@@ -168,7 +174,8 @@ def get_array(data, lat, lon, variable, bounds):
     
     return array, bounds
 
-def makeSubplot(ax, variable, array, bounds, C, label, classes, colorbar, shrink):
+def makeSubplot(ax, variable, array, bounds, selectSites, select_data, label_xs, label_ys, \
+                C, label, classes, colorbar, shrink, points=False):
     
     # plot basemap and countries
     m = Basemap(llcrnrlat=-40,urcrnrlat=40,llcrnrlon=-20,urcrnrlon=55,resolution='l')
@@ -193,6 +200,10 @@ def makeSubplot(ax, variable, array, bounds, C, label, classes, colorbar, shrink
         m.pcolormesh(x, y, array_mask, cmap=cmap, rasterized=False, edgecolor='0.6', linewidth=0)
         if colorbar == True and variable != 'class':
             cbar = plt.colorbar(shrink=shrink)
+        if points == True:
+            ax.scatter(select_data['lon'],select_data['lat'],c='k')
+            for i in range(len(label_xs)):
+                ax.text(label_xs[i], label_ys[i], selectSites[i], fontsize=16)
         
     if variable == 'class':
         formatter = plt.FuncFormatter(lambda val, loc: classes[val])
@@ -215,6 +226,6 @@ def makeSubplot(ax, variable, array, bounds, C, label, classes, colorbar, shrink
     
 makeFigure2(data, lat, lon, CDFs, selectSites, select_data, label_xs, label_ys, siteColors, True)
 makeFigure2(data, lat, lon, CDFs, selectSites, select_data, label_xs, label_ys, siteColors, False)
-makeFigure3_S4(data, lat, lon, 'Map_vcr_sim_probT_naive_robust_compare')
-makeFigure3_S4(SI_data, lat, lon, 'Map_vcr_sim_probT_naive_robust_compare_samenaiveprofT')
-makeFigureS3(data, lat, lon)
+makeFigure3_S4(data, lat, lon, selectSites, select_data, label_xs, label_ys, 'Map_vcr_sim_probT_naive_robust_compare')
+makeFigure3_S4(SI_data, lat, lon, selectSites, select_data, label_xs, label_ys, 'Map_vcr_sim_probT_naive_robust_compare_samenaiveprofT')
+makeFigureS3(data, lat, lon, selectSites, select_data, label_xs, label_ys)
