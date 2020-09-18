@@ -88,7 +88,7 @@ def makeFigure2(data, lat, lon, simVCR, selectSites, select_data, label_xs, labe
     
     return None
     
-def makeFigure3_S4(data, lat, lon, selectSites, select_data, label_xs, label_ys, figname):
+def makeFigure3_S5(data, lat, lon, selectSites, select_data, label_xs, label_ys, figname):
     
     C1 = np.array([[178,24,43],[247,247,247],[209,229,240],[146,197,222],[67,147,195],[33,102,172],[5,48,97]])/255.0
     C2 = np.array([[228, 26, 28],[77, 175, 74],[55, 126, 184],[255, 127, 0]])/255.0
@@ -120,7 +120,7 @@ def makeFigure3_S4(data, lat, lon, selectSites, select_data, label_xs, label_ys,
     
     return None
 
-def makeFigureS3(data, lat, lon, selectSites, select_data, label_xs, label_ys):
+def makeFigureS4(data, lat, lon, selectSites, select_data, label_xs, label_ys):
     
     cmap = 'YlGnBu' # colormap for left panel
     classes =  [] # categorical classes - empty because plotting continuous values in left panel
@@ -226,6 +226,6 @@ def makeSubplot(ax, variable, array, bounds, selectSites, select_data, label_xs,
     
 makeFigure2(data, lat, lon, CDFs, selectSites, select_data, label_xs, label_ys, siteColors, True)
 makeFigure2(data, lat, lon, CDFs, selectSites, select_data, label_xs, label_ys, siteColors, False)
-makeFigure3_S4(data, lat, lon, selectSites, select_data, label_xs, label_ys, 'Map_vcr_sim_probT_naive_robust_compare')
-makeFigure3_S4(SI_data, lat, lon, selectSites, select_data, label_xs, label_ys, 'Map_vcr_sim_probT_naive_robust_compare_samenaiveprofT')
-makeFigureS3(data, lat, lon, selectSites, select_data, label_xs, label_ys)
+makeFigure3_S5(data, lat, lon, selectSites, select_data, label_xs, label_ys, 'Map_vcr_sim_probT_naive_robust_compare')
+makeFigure3_S5(SI_data, lat, lon, selectSites, select_data, label_xs, label_ys, 'Map_vcr_sim_probT_naive_robust_compare_samenaiveprofT')
+makeFigureS4(data, lat, lon, selectSites, select_data, label_xs, label_ys)
