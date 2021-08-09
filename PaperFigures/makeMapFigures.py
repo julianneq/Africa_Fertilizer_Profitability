@@ -6,8 +6,8 @@ import matplotlib as mpl
 import os
 import pandas as pd
 
-#os.environ['PROJ_LIB']='C:/Users/Julianne Quinn/Anaconda3/pkgs/proj4-5.2.0-hfa6e2cd_1001/Library/share' # Laptop
-#os.environ['PROJ_LIB']='C:/Users/jdq21/Anaconda3/pkgs/proj4-4.9.3-vc14_5/Library/share' # Home Desktop
+#os.environ['PROJ_LIB']='C:/Users/Julianne Quinn/Anaconda3/pkgs/proj4-5.2.0-ha925a31_1/Library/share' # Home Desktop
+#os.environ['PROJ_LIB']='C:/Users/jdq21/Anaconda3/pkgs/proj4-4.9.3-vc14_5/Library/share' # Laptop
 os.environ['PROJ_LIB']='C:/ProgramData/Anaconda3/pkgs/proj4-4.9.3-vc14_5/Library/share' # Work Desktop
 
 from mpl_toolkits.basemap import Basemap
@@ -43,6 +43,66 @@ label_xs[5] = label_xs[5] - 6
 label_xs[[1,2,8]] = label_xs[[1,2,8]] + 3
 label_ys[[2,4,6,7]] = label_ys[[2,4,6,7]] + 2
 label_ys[9] = label_ys[9] - 3
+
+LobellSites = pd.read_csv("../Sites/EIL_site_lat_lon.csv")
+CIMMYTsites = pd.read_csv("../Sites/additional_EIL_site_lat_lon.csv")
+WortmannSites = pd.read_csv("../Sites/Wortmann_site_lat_lon.csv")
+
+LobellSites['Label'] = 'Lobell Fertilizer Trial Sites'
+CIMMYTsites['Label'] = 'CIMMYT Fertilizer Trial Sites'
+WortmannSites['Label'] = 'Wortmann Fertilizer Trial Sites'
+
+# remove sites at (0,0)
+LobellSites = LobellSites.drop(index=np.intersect1d(np.where(LobellSites['Longitude']==0)[0],
+                                   np.where(LobellSites['Latitude']==0)[0]))
+CIMMYTsites = CIMMYTsites.drop(index=np.intersect1d(np.where(CIMMYTsites['Longitude']==0)[0],
+                                   np.where(CIMMYTsites['Latitude']==0)[0]))
+WortmannSites = WortmannSites.drop(index=np.intersect1d(np.where(WortmannSites['Longitude']==0)[0],
+                                   np.where(WortmannSites['Latitude']==0)[0]))
+
+trialSites = LobellSites.append(CIMMYTsites)
+trialSites = trialSites.append(WortmannSites)
+
+maizeSites = pd.read_csv("../Prices/maize_country_mkt_lat_long_beta_stderror.csv")
+ureaSites = pd.read_csv("../Prices/urea_country_mkt_lat_long_beta_stderror.csv")
+
+maizeSites['Label'] = 'Maize Markets'
+ureaSites['Label'] = 'Urea Markets'
+
+def plotSitesMap(EILsites, CIMMYTsites, WortmannSites, maizeSites, ureaSites):
+    
+    sns.set()
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    
+    # plot basemap and countries
+    m = Basemap(llcrnrlat=-40,urcrnrlat=40,llcrnrlon=-20,urcrnrlon=55,resolution='l')
+    m.drawlsmask()
+    m.drawcountries(color='0.2', linewidth=0.5)
+    m.drawparallels(np.arange(-40,41,20), labels=[1,0,0,1], dashes=[1,1], linewidth=0.25, 
+                    color='0.8', fontsize=16)
+    m.drawmeridians(np.arange(-20,56,15), labels=[1,0,0,1], dashes=[1,1], linewidth=0.25, 
+                    color='0.8', fontsize=16)
+    maize = ax.scatter(maizeSites['longitude'],maizeSites['latitude'],facecolor='#e6ab02',
+                       edgecolor='k',marker='o')
+    urea = ax.scatter(ureaSites['longitude'],ureaSites['latitude'],facecolor='#d95f02',
+                      edgecolor='k',marker='o')
+    Lobell = ax.scatter(LobellSites['Longitude'],LobellSites['Latitude'],facecolor='#1b9e77',
+                     edgecolor='k',marker='o')
+    CIMMYT = ax.scatter(CIMMYTsites['Longitude'],CIMMYTsites['Latitude'],
+                        facecolor='#1b9e77',edgecolor='k',marker='^')
+    Wortmann = ax.scatter(WortmannSites['Longitude'],WortmannSites['Latitude'],
+                          facecolor='#1b9e77',edgecolor='k',marker='s')
+    
+    fig.subplots_adjust(bottom=0.3)
+    fig.legend([Lobell, Wortmann, CIMMYT, maize, urea], ['Lobell Fertilizer Trial Sites',
+                'Wortmann Fertilizer Trial Sites','CIMMYT Fertilizer Trial Sites',
+                'Maize Markets', 'Urea Markets'], loc='lower center', fontsize=16)
+    fig.set_size_inches([8.5,7.0])
+    fig.savefig('AllSites.pdf')
+    fig.clf()
+    
+    return None
 
 def makeFigure2(data, lat, lon, simIRR, selectSites, select_data, label_xs, label_ys, colors, colorbar):
     
@@ -163,7 +223,7 @@ def makeFigureS4(data, lat, lon, selectSites, select_data, label_xs, label_ys, f
     fig = plt.figure()
     ax = fig.add_subplot(1,1,1)
     makeSubplot(ax, 'classnrt', class_array, bounds, selectSites, select_data, label_xs, label_ys, \
-                C, '', classes, True, 0.5)
+                C, '', classes, True, 1.0)
     
     fig.tight_layout()
     fig.savefig(figname + '.pdf')
@@ -262,3 +322,5 @@ makeFigure3(data, lat, lon, selectSites, select_data, label_xs, label_ys, 'Map_I
 makeFigureS3(data, lat, lon, selectSites, select_data, label_xs, label_ys)
 makeFigureS4(data, lat, lon, selectSites, select_data, label_xs, label_ys, 
              'Map_IRR_sim_probT_naive_robust_compare_samenaiveprofT')
+
+plotSitesMap(LobellSites, CIMMYTsites, WortmannSites, maizeSites, ureaSites)
