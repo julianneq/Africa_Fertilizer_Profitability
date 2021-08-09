@@ -60,9 +60,6 @@ CIMMYTsites = CIMMYTsites.drop(index=np.intersect1d(np.where(CIMMYTsites['Longit
 WortmannSites = WortmannSites.drop(index=np.intersect1d(np.where(WortmannSites['Longitude']==0)[0],
                                    np.where(WortmannSites['Latitude']==0)[0]))
 
-trialSites = LobellSites.append(CIMMYTsites)
-trialSites = trialSites.append(WortmannSites)
-
 maizeSites = pd.read_csv("../Prices/maize_country_mkt_lat_long_beta_stderror.csv")
 ureaSites = pd.read_csv("../Prices/urea_country_mkt_lat_long_beta_stderror.csv")
 
