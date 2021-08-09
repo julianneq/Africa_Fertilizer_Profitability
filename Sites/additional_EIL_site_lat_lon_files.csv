@@ -1,0 +1,6 @@
+LocationID,Country,Location,Region,Latitude,Longitude,ElevM,File1,File2,File3,File4
+2101,GHANA,EJURA,Western Africa,7.383333,-1.366667,232,lat7.375_long-1.375.txt,,,
+2102,GHANA,FUMESUA,Western Africa,6.75,-1.583333,270,lat6.625_long-1.625.txt,lat6.875_long-1.625.txt,,
+2201,NIGERIA,ZARIA,Western Africa,11.066667,7.7,648,lat11.125_long7.625.txt,,,
+2202,NIGERIA,SAMARU,Western Africa,11.183333,7.616667,730,lat11.125_long7.625.txt,,,
+2301,SUDAN,WAD MEDANI,Eastern and Southern Africa,14.4,32.833333,40,lat14.375_long32.875.txt,,,
