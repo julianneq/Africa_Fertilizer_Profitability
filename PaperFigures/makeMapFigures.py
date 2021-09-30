@@ -14,6 +14,42 @@ from mpl_toolkits.basemap import Basemap
 
 # load data
 data = pd.read_csv('Simdata_cellid.csv')
+yp_difSensitivity = pd.read_csv('yp_dif_avg_most_sensitive.csv')
+irrSensitivity = pd.read_csv('irr_avg_most_sensitive.csv')
+
+variables = ['temp_p1','temp_p2','temp_p3','precip_p1','precip_p2','precip_p3',
+             'soilcec','soilph','acidity','soilom','soiln','claypct','siltpct','bulkdens',
+             'elevm','mp','up','int']
+
+def getGroup(sensitivity):
+    # classify most sensitive variables into groups
+    sensitivity['group'] = np.empty(len(sensitivity['MostSensitive']))
+    sensitivity['group'][np.hstack([np.where(sensitivity['MostSensitive']=='temp_p1')[0],
+                                    np.where(sensitivity['MostSensitive']=='temp_p2')[0],
+                                    np.where(sensitivity['MostSensitive']=='temp_p3')[0]])] = 0
+    sensitivity['group'][np.hstack([np.where(sensitivity['MostSensitive']=='precip_p1')[0],
+                                    np.where(sensitivity['MostSensitive']=='precip_p2')[0],
+                                    np.where(sensitivity['MostSensitive']=='precip_p3')[0]])] = 1
+    sensitivity['group'][np.where(sensitivity['MostSensitive']=='soilph')[0]] = 2
+    sensitivity['group'][np.hstack([np.where(sensitivity['MostSensitive']=='soilcec')[0],
+                                    np.where(sensitivity['MostSensitive']=='acidity')[0],
+                                    np.where(sensitivity['MostSensitive']=='soilom')[0],
+                                    np.where(sensitivity['MostSensitive']=='soiln')[0],
+                                    np.where(sensitivity['MostSensitive']=='claypct')[0],
+                                    np.where(sensitivity['MostSensitive']=='siltpct')[0],
+                                    np.where(sensitivity['MostSensitive']=='bulkdens')[0]])] = 3
+    sensitivity['group'][np.where(sensitivity['MostSensitive']=='elevm')[0]] = 4
+    sensitivity['group'][np.hstack([np.where(sensitivity['MostSensitive']=='mp')[0],
+                                    np.where(sensitivity['MostSensitive']=='up')[0],
+                                    np.where(sensitivity['MostSensitive']=='int')[0]])] = 5
+    
+    return sensitivity
+
+irrSensitivity = getGroup(irrSensitivity)
+yp_difSensitivity = getGroup(yp_difSensitivity)
+
+irrData = pd.merge(data,irrSensitivity)
+yp_difData = pd.merge(data,yp_difSensitivity)
 
 # simulated IRR distributions at different sites
 shortlist_data = pd.read_csv('TrialSites_Sim_Shortlist.csv')
@@ -34,7 +70,7 @@ for i in range(len(selectSites)):
     select_data.iloc[i,:] = data.iloc[index,:].to_numpy()
     
 # color of line for each site and where to label it on the map
-siteColors = ['#fdbf6f','#1f78b4','#b2df8a','#a6cee3','#cab2d6','#ff7f00','#fb9a99','#6a3d9a','#e31a1c','#33a02c']
+siteColors = ['#fdbf6f','#b2df8a','#a6cee3','#cab2d6','#6a3d9a','#fb9a99','#ff7f00','#1f78b4','#e31a1c','#33a02c']
 label_ys = np.array(select_data['lat']-1)
 label_xs = np.array(select_data['lon']-1.5)
 label_xs[0] = label_xs[0] - 2.5
@@ -66,11 +102,19 @@ ureaSites = pd.read_csv("../Prices/urea_country_mkt_lat_long_beta_stderror.csv")
 maizeSites['Label'] = 'Maize Markets'
 ureaSites['Label'] = 'Urea Markets'
 
-def plotSitesMap(EILsites, CIMMYTsites, WortmannSites, maizeSites, ureaSites):
+cols = maizeSites.columns.tolist()
+cols = cols[0:2] + cols[3:5]
+combinedSites = pd.merge(maizeSites[cols], ureaSites[cols], how='outer', indicator='Exist')
+
+maizeOnlySites = combinedSites.loc[combinedSites['Exist'] == 'left_only']
+bothSites = combinedSites.loc[combinedSites['Exist'] == 'both']
+ureaOnlySites = combinedSites.loc[combinedSites['Exist'] == 'right_only']
+
+def plotSitesMap(LobellSites, CIMMYTsites, WortmannSites, maizeOnlySites, ureaOnlySites, bothSites):
     
     sns.set()
     fig = plt.figure()
-    ax = fig.add_subplot(111)
+    ax = fig.add_subplot(1,2,1)
     
     # plot basemap and countries
     m = Basemap(llcrnrlat=-40,urcrnrlat=40,llcrnrlon=-20,urcrnrlon=55,resolution='l')
@@ -80,10 +124,7 @@ def plotSitesMap(EILsites, CIMMYTsites, WortmannSites, maizeSites, ureaSites):
                     color='0.8', fontsize=16)
     m.drawmeridians(np.arange(-20,56,15), labels=[1,0,0,1], dashes=[1,1], linewidth=0.25, 
                     color='0.8', fontsize=16)
-    maize = ax.scatter(maizeSites['longitude'],maizeSites['latitude'],facecolor='#e6ab02',
-                       edgecolor='k',marker='o')
-    urea = ax.scatter(ureaSites['longitude'],ureaSites['latitude'],facecolor='#d95f02',
-                      edgecolor='k',marker='o')
+    # plot fertilizer trial sites
     Lobell = ax.scatter(LobellSites['Longitude'],LobellSites['Latitude'],facecolor='#1b9e77',
                      edgecolor='k',marker='o')
     CIMMYT = ax.scatter(CIMMYTsites['Longitude'],CIMMYTsites['Latitude'],
@@ -91,11 +132,27 @@ def plotSitesMap(EILsites, CIMMYTsites, WortmannSites, maizeSites, ureaSites):
     Wortmann = ax.scatter(WortmannSites['Longitude'],WortmannSites['Latitude'],
                           facecolor='#1b9e77',edgecolor='k',marker='s')
     
+    ax = fig.add_subplot(1,2,2)
+    m = Basemap(llcrnrlat=-40,urcrnrlat=40,llcrnrlon=-20,urcrnrlon=55,resolution='l')
+    m.drawlsmask()
+    m.drawcountries(color='0.2', linewidth=0.5)
+    m.drawparallels(np.arange(-40,41,20), labels=[1,0,0,1], dashes=[1,1], linewidth=0.25, 
+                    color='0.8', fontsize=16)
+    m.drawmeridians(np.arange(-20,56,15), labels=[1,0,0,1], dashes=[1,1], linewidth=0.25, 
+                    color='0.8', fontsize=16)
+    # plot maize and urea markets
+    maize = ax.scatter(maizeOnlySites['longitude'],maizeOnlySites['latitude'],facecolor='#e6ab02',
+                       edgecolor='k',marker='o')
+    urea = ax.scatter(ureaOnlySites['longitude'],ureaOnlySites['latitude'],facecolor='#d95f02',
+                      edgecolor='k',marker='o')
+    both = ax.scatter(bothSites['longitude'],bothSites['latitude'],facecolor='#666666',
+                      edgecolor='k',marker='o')
+    
     fig.subplots_adjust(bottom=0.3)
-    fig.legend([Lobell, Wortmann, CIMMYT, maize, urea], ['Lobell Fertilizer Trial Sites',
+    fig.legend([Lobell, Wortmann, CIMMYT, maize, urea, both], ['Lobell Fertilizer Trial Sites',
                 'Wortmann Fertilizer Trial Sites','CIMMYT Fertilizer Trial Sites',
-                'Maize Markets', 'Urea Markets'], loc='lower center', fontsize=16)
-    fig.set_size_inches([8.5,7.0])
+                'Maize Markets','Urea Markets','Maize + Urea Markets'], loc='lower center', fontsize=16, ncol=2)
+    fig.set_size_inches([12,6])
     fig.savefig('AllSites.pdf')
     fig.clf()
     
@@ -134,8 +191,8 @@ def makeFigure2(data, lat, lon, simIRR, selectSites, select_data, label_xs, labe
     ax.set_xlabel('Internal Rate of Return (IRR)',fontsize=20)
     ax.set_ylabel('Cumulative Distribution',fontsize=20)
     handles, labels = plt.gca().get_legend_handles_labels()
-    ax.legend([handles[8],handles[6],handles[5],handles[0],handles[9],handles[2],handles[1],handles[3],handles[7],handles[4]], \
-              [labels[8],labels[6],labels[5],labels[0],labels[9],labels[2],labels[1],labels[3],labels[7],labels[4]], \
+    ax.legend([handles[8],handles[5],handles[6],handles[0],handles[9],handles[1],handles[7],handles[2],handles[4],handles[3]], \
+              [labels[8],labels[5],labels[6],labels[0],labels[9],labels[1],labels[7],labels[2],labels[4],labels[3]], \
                   loc='upper right', ncol=1, fontsize=18)
     fig.set_size_inches([19, 9.6])
     
@@ -175,7 +232,7 @@ def makeFigure3(data, lat, lon, selectSites, select_data, label_xs, label_ys, fi
     
     fig.set_size_inches([19, 9.6])
     fig.tight_layout()
-    fig.savefig(figname + '.pdf')
+    fig.savefig(figname)
     fig.clf()
     
     return None
@@ -223,7 +280,35 @@ def makeFigureS4(data, lat, lon, selectSites, select_data, label_xs, label_ys, f
                 C, '', classes, True, 1.0)
     
     fig.tight_layout()
-    fig.savefig(figname + '.pdf')
+    fig.savefig(figname)
+    fig.clf()
+    
+    return None
+
+def makeSensitivityMap(yp_difData, irrData, lat, lon, selectSites, select_data, label_xs, label_ys, figname):    
+    C_yp_dif = np.array([[228,26,28],[55,126,184],[255,127,0],[166,86,40],[255,255,51]])/255.0
+    classes_yp_dif = ['Temperature','Precipitation','Soil pH','Other Soil\nVariables','Elevation']
+    bounds_yp_dif = np.array([-0.5,0.5,1.5,2.5,3.5,4.5])
+    
+    C_irr = np.array([[228,26,28],[55,126,184],[255,127,0],[166,86,40],[255,255,51],[77,175,74]])/255.0
+    classes_irr = ['Temperature','Precipitation','Soil pH','Other Soil\nVariables','Elevation','Prices']
+    bounds_irr = np.array([-0.5,0.5,1.5,2.5,3.5,4.5,5.5])
+    
+    class_array_yp_dif, bounds_yp_dif = get_array(yp_difData, lat, lon, 'group', bounds_yp_dif)
+    class_array_irr, bounds_irr = get_array(irrData, lat, lon, 'group', bounds_irr)
+    
+    sns.set()
+    fig = plt.figure()
+    ax = fig.add_subplot(1,2,1)
+    makeSubplot(ax, 'group', class_array_yp_dif, bounds_yp_dif, selectSites, select_data, label_xs, label_ys, \
+                C_yp_dif, '', classes_yp_dif, True, 1.0)
+    
+    ax = fig.add_subplot(1,2,2)
+    makeSubplot(ax, 'group', class_array_irr, bounds_irr, selectSites, select_data, label_xs, label_ys, \
+                C_irr, '', classes_irr, True, 1.0)
+    
+    fig.set_size_inches([15,5])
+    fig.savefig(figname)
     fig.clf()
     
     return None
@@ -270,8 +355,12 @@ def makeSubplot(ax, variable, array, bounds, selectSites, select_data, label_xs,
     m = Basemap(llcrnrlat=-40,urcrnrlat=40,llcrnrlon=-20,urcrnrlon=55,resolution='l')
     m.drawlsmask()
     m.drawcountries(color='0.2', linewidth=0.5)
-    m.drawparallels(np.arange(-40,41,20), labels=[1,0,0,1], dashes=[1,1], linewidth=0.25, color='0.8', fontsize=16)
-    m.drawmeridians(np.arange(-20,56,15), labels=[1,0,0,1], dashes=[1,1], linewidth=0.25, color='0.8', fontsize=16)
+    if variable != 'y_pred_sim_dif_probT_cfrobust':
+        m.drawparallels(np.arange(-40,41,20), labels=[1,0,0,1], dashes=[1,1], linewidth=0.25, color='0.8', fontsize=16)
+        m.drawmeridians(np.arange(-20,56,15), labels=[1,0,0,1], dashes=[1,1], linewidth=0.25, color='0.8', fontsize=16)
+    else:
+        m.drawparallels(np.arange(-40,41,20), labels=[1,0,0,1], dashes=[1,1], linewidth=0.25, color='0.8', fontsize=18)
+        m.drawmeridians(np.arange(-20,56,15), labels=[1,0,0,1], dashes=[1,1], linewidth=0.25, color='0.8', fontsize=18)
         
     array_mask = np.ma.masked_invalid(array)
     x, y = np.meshgrid(lon, lat)
@@ -287,17 +376,17 @@ def makeSubplot(ax, variable, array, bounds, selectSites, select_data, label_xs,
         cbar = plt.colorbar(shrink=shrink)
     else:
         m.pcolormesh(x, y, array_mask, cmap=cmap, rasterized=False, edgecolor='0.6', linewidth=0)
-        if colorbar == True and variable != 'class' and variable != 'classnrt':
+        if colorbar == True and variable != 'class' and variable != 'classnrt' and variable != 'group':
             cbar = plt.colorbar(shrink=shrink)
         if points == True:
             ax.scatter(select_data['lon'],select_data['lat'],c='k')
             for i in range(len(label_xs)):
                 ax.text(label_xs[i], label_ys[i], selectSites[i], fontsize=16)
         
-    if variable == 'class' or variable == 'classnrt':
+    if variable == 'class' or variable == 'classnrt' or variable == 'group':
         formatter = plt.FuncFormatter(lambda val, loc: classes[val])
-        cbar = plt.colorbar(ticks=[0,1,2,3], format=formatter, shrink=shrink)
-        plt.clim(-0.5, 3.5)
+        cbar = plt.colorbar(ticks=np.arange(len(C)), format=formatter, shrink=shrink)
+        plt.clim(-0.5,len(C)-0.5)
         cbar.solids.set_edgecolor("face")
         
     if colorbar == True:
@@ -307,17 +396,23 @@ def makeSubplot(ax, variable, array, bounds, selectSites, select_data, label_xs,
                 ticks[i] = bounds[i] + (bounds[i+1] - bounds[i])/2
             cbar.set_ticks(ticks)
             cbar.set_ticklabels(classes)
-        
-        cbar.ax.tick_params(labelsize=16)
-        cbar.ax.set_ylabel(label,fontsize=18)
+
+        if variable != 'y_pred_sim_dif_probT_cfrobust':
+            cbar.ax.tick_params(labelsize=16)
+            cbar.ax.set_ylabel(label,fontsize=18)
+        else:
+            cbar.ax.tick_params(labelsize=18)
+            cbar.ax.set_ylabel(label,fontsize=20)
     
     return ax
     
 makeFigure2(data, lat, lon, CDFs, selectSites, select_data, label_xs, label_ys, siteColors, True)
 makeFigure2(data, lat, lon, CDFs, selectSites, select_data, label_xs, label_ys, siteColors, False)
-makeFigure3(data, lat, lon, selectSites, select_data, label_xs, label_ys, 'Map_IRR_sim_probT_naive_robust_compare')
+makeFigure3(data, lat, lon, selectSites, select_data, label_xs, label_ys, 'Map_IRR_sim_probT_naive_robust_compare.pdf')
 makeFigureS3(data, lat, lon, selectSites, select_data, label_xs, label_ys)
 makeFigureS4(data, lat, lon, selectSites, select_data, label_xs, label_ys, 
-             'Map_IRR_sim_probT_naive_robust_compare_samenaiveprofT')
-
-plotSitesMap(LobellSites, CIMMYTsites, WortmannSites, maizeSites, ureaSites)
+             'Map_IRR_sim_probT_naive_robust_compare_samenaiveprofT.pdf')
+makeSensitivityMap(yp_difData, irrData, lat, lon, selectSites, select_data, label_xs, label_ys, 'SensitivityMap.pdf')
+#makeSensitivityBarPlot(yp_difData, variables[0:-3], "SensitivityBar_yp_dif.pdf")
+#makeSensitivityBarPlot(irrData, variables, "SensitivityBar_irr")
+plotSitesMap(LobellSites, CIMMYTsites, WortmannSites, maizeOnlySites, ureaOnlySites, bothSites)
