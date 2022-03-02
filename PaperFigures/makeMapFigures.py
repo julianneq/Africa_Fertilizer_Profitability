@@ -188,7 +188,7 @@ def makeFigure2(data, lat, lon, simIRR, selectSites, select_data, label_xs, labe
     
     
     ax.tick_params(axis='both',labelsize=18)
-    ax.set_xlabel('Internal Rate of Return (IRR)',fontsize=20)
+    ax.set_xlabel('IRR (% of Fertilizer Investment)',fontsize=20)
     ax.set_ylabel('Cumulative Distribution',fontsize=20)
     handles, labels = plt.gca().get_legend_handles_labels()
     ax.legend([handles[8],handles[5],handles[6],handles[0],handles[9],handles[1],handles[7],handles[2],handles[4],handles[3]], \
