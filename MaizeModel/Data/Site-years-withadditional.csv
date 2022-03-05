@@ -1,0 +1,191 @@
+ObjectID,locationid,addedbyus,country,location,region,latitude,longitude,elevm,InStudy,y_1999,y_2000,y_2001,y_2002,y_2003,y_2004,y_2005,y_2006,y_2007
+1,6,0,ANGOLA,CABINDA,Eastern and Southern Africa,-5.6,12.2,22,1,0,0,0,1,1,1,0,0,0
+2,7,0,ANGOLA,CACUSO,Eastern and Southern Africa,-9.42,15.75,1067,1,0,0,0,0,1,1,1,0,0
+3,8,0,ANGOLA,CELA,Eastern and Southern Africa,-11.42,15.12,1305,1,0,0,0,0,1,1,1,1,0
+4,9,0,ANGOLA,CHIANGA,Eastern and Southern Africa,-12.73,15.83,1693,1,0,1,1,0,1,1,1,0,0
+5,10,0,ANGOLA,HUMPATA,Eastern and Southern Africa,-15.03,13.43,1890,1,0,0,0,1,1,1,1,0,0
+6,11,0,ANGOLA,KILOMBA,Eastern and Southern Africa,-8.9,14.7,514,1,0,0,0,0,1,0,0,0,0
+7,12,0,ANGOLA,KILOMBO,Eastern and Southern Africa,-8.91,14.73,766,1,0,0,0,0,1,0,0,0,0
+8,14,0,ANGOLA,MALANGE,Eastern and Southern Africa,-9.533,16.333,1149,1,0,0,1,0,0,0,1,0,0
+9,15,0,ANGOLA,MAZOZO,Eastern and Southern Africa,-9.1,13.7,41,1,0,1,1,0,1,1,0,0,0
+10,16,0,ANGOLA,MAZOZO EXPERIMENTAL STATION,Eastern and Southern Africa,-9.1,13.7,41,1,0,1,0,0,0,0,0,0,0
+11,17,0,ANGOLA,POLIGNO-FLORESTA,Eastern and Southern Africa,-9.52,16.32,1162,1,0,0,1,0,0,0,0,0,0
+12,18,0,ANGOLA,ST. VINCENT,Eastern and Southern Africa,-5.57,12.2,57,1,0,1,1,0,0,0,0,0,0
+13,77,0,BOTSWANA,GOODHOPE,Eastern and Southern Africa,-25.48,25.47,1268,1,1,1,1,1,1,1,0,0,0
+14,78,0,BOTSWANA,HUKUNTSI,Eastern and Southern Africa,-24,21.8,1140,1,0,0,1,0,0,1,0,0,0
+15,80,0,BOTSWANA,PELOTSHETLHA,Eastern and Southern Africa,-23.03,26.517,1111,1,0,0,0,1,1,1,0,0,0
+16,81,0,BOTSWANA,SEBELE,Eastern and Southern Africa,-24.57,25.95,995,1,0,0,1,1,1,1,1,0,0
+17,286,0,ETHIOPIA,BAKO,Eastern and Southern Africa,9.1,37.15,1680,1,0,1,1,0,1,1,1,1,1
+18,295,0,ETHIOPIA,MELKASA,Eastern and Southern Africa,8.4,39.33,1545,1,0,0,0,0,1,0,0,0,0
+19,300,0,ETHIOPIA,PAWE,Eastern and Southern Africa,11.23,38,1499,1,0,0,1,0,0,0,0,0,0
+20,464,0,KENYA,ALUPE,Eastern and Southern Africa,0.5,34.11,1168,1,0,1,0,0,0,0,0,0,0
+21,469,0,KENYA,BUNGOMA,Eastern and Southern Africa,0.567,34.567,1414,1,0,0,1,0,0,1,1,1,1
+22,474,0,KENYA,EMBU,Eastern and Southern Africa,-0.5,37.45,1492,1,0,1,1,0,0,0,0,0,0
+23,480,0,KENYA,KAKAMEGA,Eastern and Southern Africa,0.27,34.74,1526,1,0,0,1,0,0,0,1,0,0
+24,487,0,KENYA,KIBOKO,Eastern and Southern Africa,-2.25,37.73,990,1,0,0,1,0,0,0,0,0,0
+25,492,0,KENYA,KITALE,Eastern and Southern Africa,1.01,35,1859,1,0,1,1,0,0,1,1,1,0
+26,501,0,KENYA,MTWAPA,Eastern and Southern Africa,-3.93,39.75,23,1,1,0,0,0,0,0,0,0,0
+27,507,0,KENYA,SIGOR,Eastern and Southern Africa,1.483,35.467,976,1,0,1,0,0,0,0,0,0,0
+28,513,0,LESOTHO,LERIBE,Eastern and Southern Africa,-28.88,28.05,1621,1,0,1,1,0,1,1,0,0,0
+29,515,0,LESOTHO,MACHACHE,Eastern and Southern Africa,-29.367,27.917,2337,1,0,1,1,0,0,1,1,1,1
+30,516,0,LESOTHO,MAHOBONG,Eastern and Southern Africa,-28.88,28.05,1621,1,0,1,1,0,0,1,1,1,1
+31,517,0,LESOTHO,MASERU,Eastern and Southern Africa,-29.28,27.5,1503,1,1,1,1,0,1,1,1,0,0
+32,520,0,LESOTHO,NYAKOSOBA,Eastern and Southern Africa,-29.55,27.78,1942,1,0,0,0,0,0,0,0,1,1
+33,524,0,MALAWI,BAKA,Eastern and Southern Africa,-9.75,34,477,1,0,1,1,0,0,1,1,1,1
+34,526,0,MALAWI,BEMBEKE,Eastern and Southern Africa,-14.17,34.43,1054,1,0,0,0,0,0,1,1,1,0
+35,527,0,MALAWI,BOLERO,Eastern and Southern Africa,-10.983,33.75,1099,1,0,0,0,0,0,0,0,1,1
+36,528,0,MALAWI,BVUMBWE,Eastern and Southern Africa,-15.92,35.07,1172,1,0,1,1,1,1,1,1,1,1
+37,529,0,MALAWI,BWANJE,Eastern and Southern Africa,-14.08,34.95,474,1,0,0,0,0,0,0,1,1,1
+38,530,0,MALAWI,CHITALA,Eastern and Southern Africa,-13.13,34.07,769,1,0,1,1,1,1,1,1,1,1
+39,531,0,MALAWI,CHITEDZE,Eastern and Southern Africa,-13.98,33.63,1140,1,0,1,1,1,1,1,1,1,1
+40,532,0,MALAWI,LUNYANGWA,Eastern and Southern Africa,-11.45,33.917,1290,1,0,1,1,1,1,1,1,0,0
+41,533,0,MALAWI,MAKOKA,Eastern and Southern Africa,-14.7,35.6,856,1,0,1,1,1,1,1,1,1,1
+42,534,0,MALAWI,MBAWA,Eastern and Southern Africa,-12.1,33.5,1357,1,0,1,1,0,1,1,1,1,1
+43,536,0,MALAWI,NGABU,Eastern and Southern Africa,-16.47,34.92,91,1,0,1,1,0,0,0,0,0,0
+44,538,0,MALAWI,SALIMA,Eastern and Southern Africa,-13.75,34.58,503,1,0,0,0,0,1,0,0,0,0
+45,539,0,MALAWI,TSANGANO,Eastern and Southern Africa,-15.18,34.62,1539,1,0,0,0,0,1,1,1,1,1
+46,724,0,MOZAMBIQUE,ANGONIA TETE,Eastern and Southern Africa,-16.16,33.59,145,1,0,1,1,1,1,1,1,1,1
+47,726,0,MOZAMBIQUE,CHOKWE,Eastern and Southern Africa,-24.53,33,32,1,0,1,1,1,1,1,1,1,1
+48,728,0,MOZAMBIQUE,LICHINGA,Eastern and Southern Africa,-13.3,35.23,1289,1,0,0,0,0,1,1,0,0,0
+49,729,0,MOZAMBIQUE,MAPUPULO,Eastern and Southern Africa,-13.24,38.87,513,1,0,0,0,0,0,0,0,0,1
+50,731,0,MOZAMBIQUE,MOCUBA,Eastern and Southern Africa,-16.84,38.26,66,1,0,0,0,0,0,0,0,0,1
+51,736,0,MOZAMBIQUE,NAMPULA,Eastern and Southern Africa,-15.1,39.28,428,1,0,0,1,1,1,1,1,1,1
+52,737,0,MOZAMBIQUE,NHACOONGO,Eastern and Southern Africa,-24.49,34.75,107,1,0,0,0,0,0,0,0,1,1
+53,741,0,MOZAMBIQUE,SUSSUNDENGA,Eastern and Southern Africa,-19.33,33.22,642,1,0,1,1,1,1,1,1,1,1
+54,864,0,SOUTH AFRICA,BARBERTON,Eastern and Southern Africa,-25.79,31.06,979,1,0,0,0,0,1,1,0,0,0
+55,875,0,SOUTH AFRICA,POTCHESFTROOM,Eastern and Southern Africa,-26.7,27.1,1341,1,0,1,1,0,0,0,0,0,0
+56,877,0,SOUTH AFRICA,VILJOONSKROON,Eastern and Southern Africa,-27.2,26.9,1341,1,0,1,1,0,0,0,0,0,0
+57,878,0,SOUTH AFRICA REP.,BETLEHEM,Eastern and Southern Africa,-28.25,28.33,1682,1,0,1,1,0,0,0,0,0,0
+58,880,0,SOUTH AFRICA REP.,EZOLIMO,Eastern and Southern Africa,-25.2,31.2,583,1,1,1,1,1,1,0,0,0,0
+59,881,0,SOUTH AFRICA REP.,FRIEDENHEI,Eastern and Southern Africa,-25.47,30.97,671,1,0,1,1,0,0,0,0,0,0
+60,882,0,SOUTH AFRICA REP.,GREYTOWN,Eastern and Southern Africa,-29.02,30.6,1288,1,1,1,1,1,1,1,0,1,1
+61,884,0,SOUTH AFRICA REP.,LWAMONGO,Eastern and Southern Africa,-23.03,30.33,958,1,0,1,1,0,0,0,0,0,0
+62,885,0,SOUTH AFRICA REP.,NELSPRUIT,Eastern and Southern Africa,-25.47,30.97,671,1,0,0,0,0,1,1,0,0,0
+63,886,0,SOUTH AFRICA REP.,POTCHEFSTROOM,Eastern and Southern Africa,-26.67,27.07,1382,1,0,1,1,0,1,1,0,0,0
+64,887,0,SOUTH AFRICA REP.,SETLAGOLE,Eastern and Southern Africa,-26.28,25.12,1231,1,0,1,1,0,0,0,0,0,0
+65,896,0,SWAZILAND,MALKERNS,Eastern and Southern Africa,-26.553,31.165,747,1,0,0,0,0,1,1,1,1,0
+66,897,0,SWAZILAND,MANGCONGO,Eastern and Southern Africa,-26.57,30.85,1435,1,0,0,0,0,0,0,1,1,0
+67,898,0,SWAZILAND,NHLANGANO,Eastern and Southern Africa,-27.11,31.216,1065,1,0,0,0,1,1,0,0,0,0
+68,904,0,TANZANIA,AFSF-ARUSHA,Eastern and Southern Africa,-3.3658,36.6745,1415,1,0,0,0,0,0,0,0,1,0
+69,905,0,TANZANIA,ARUSHA,Eastern and Southern Africa,-3.18,36.7,1995,1,0,0,1,0,1,1,1,1,0
+70,907,0,TANZANIA,ARUSHA TAN,Eastern and Southern Africa,-3.36,36.67,1415,1,0,0,1,0,0,0,0,0,0
+71,908,0,TANZANIA,CHOLIMA,Eastern and Southern Africa,-7.43,37.7,151,1,0,0,0,0,0,0,0,1,0
+72,911,0,TANZANIA,DAKAWA,Eastern and Southern Africa,-7.43,37.7,151,1,0,0,0,0,0,1,0,0,0
+73,912,0,TANZANIA,ILONGA,Eastern and Southern Africa,-6.77,37.03,554,1,0,0,1,0,1,1,1,1,0
+74,913,0,TANZANIA,INYALA,Eastern and Southern Africa,-8.867,33.633,1582,1,0,1,0,0,0,0,0,0,0
+75,914,0,TANZANIA,KATRIN,Eastern and Southern Africa,-8.133,36.683,262,1,1,0,0,0,0,1,1,1,0
+76,915,0,TANZANIA,KATRIN1,Eastern and Southern Africa,-8.13,36.68,262,1,0,0,1,0,0,0,0,0,0
+77,916,0,TANZANIA,KATRIN2,Eastern and Southern Africa,-8.13,36.68,262,1,0,0,1,0,0,0,0,0,0
+78,918,0,TANZANIA,LAMBO,Eastern and Southern Africa,-3.23,37.88,935,1,0,1,0,0,0,0,0,0,0
+79,919,0,TANZANIA,MARUKU,Eastern and Southern Africa,-1.338,32.786,1133,1,0,0,0,0,0,1,0,0,0
+80,920,0,TANZANIA,MBULUMBULU,Eastern and Southern Africa,-3.25,35.8,1645,1,0,0,1,0,1,1,0,0,0
+81,921,0,TANZANIA,MLINGANO,Eastern and Southern Africa,-5.07,38.92,100,1,1,0,0,0,0,0,0,0,0
+82,922,0,TANZANIA,MONDULI,Eastern and Southern Africa,-3.3,36.45,1504,1,0,1,0,0,0,0,0,0,0
+83,928,0,TANZANIA,SELIAN,Eastern and Southern Africa,-3.22,36.37,1756,1,0,0,1,0,0,0,0,1,0
+84,929,0,TANZANIA,TABORA,Eastern and Southern Africa,-5.02,32.8,1192,1,0,0,0,1,1,0,0,0,0
+85,931,0,TANZANIA,TUMBI,Eastern and Southern Africa,-5.07,32.73,1162,1,0,0,0,1,1,1,1,1,0
+86,933,0,TANZANIA,UKIRIGURU,Eastern and Southern Africa,-2.719,33.024,1220,1,0,0,0,0,0,1,0,1,0
+87,935,0,TANZANIA,WERUWERU,Eastern and Southern Africa,-3.317,37.25,984,1,0,0,1,0,0,1,0,1,0
+88,953,0,UGANDA,KAMAYANMIGGO,Eastern and Southern Africa,-0.25,31.25,1322,1,0,1,0,0,0,0,0,0,0
+89,954,0,UGANDA,KAMENYAMIGGO,Eastern and Southern Africa,-0.25,31.25,1322,1,0,0,1,0,0,0,0,0,0
+90,960,0,UGANDA,NAARI,Eastern and Southern Africa,0.5333,34.1167,1161,1,0,1,1,0,0,0,0,0,0
+91,961,0,UGANDA,NAMULONGE,Eastern and Southern Africa,0.53,32.58,1192,1,1,0,0,0,1,1,1,0,1
+92,962,0,UGANDA,NAMULONGE UGA,Eastern and Southern Africa,0.53,32.58,1192,1,0,1,1,0,0,0,0,0,0
+93,963,0,UGANDA,SERERE,Eastern and Southern Africa,1.517,33.45,1106,1,0,1,1,0,1,0,0,0,0
+94,1020,0,ZAIRE,MVUAZI,Eastern and Southern Africa,-5.45,14.9,430,1,0,1,1,0,0,0,0,0,0
+95,1022,0,ZAMBIA,GOLDEN VALLEY,Eastern and Southern Africa,-14.17,28.37,1173,1,0,1,1,1,1,1,1,1,1
+96,1023,0,ZAMBIA,KASAMA,Eastern and Southern Africa,-10.1,31.1,1352,1,0,0,0,0,1,1,1,1,1
+97,1024,0,ZAMBIA,KASAMA,,,,,1,,,,,,,,,
+98,1029,0,ZAMBIA,MAGOYE,Eastern and Southern Africa,-15.526,27.45,978,1,0,1,1,0,0,0,0,0,0
+99,1031,0,ZAMBIA,MASUMBA,Eastern and Southern Africa,-13.16,31.58,605,1,0,1,1,0,0,0,0,0,0
+100,1032,0,ZAMBIA,MISAMFU,Eastern and Southern Africa,-10.2,31.1,1377,1,0,1,1,1,1,0,0,0,0
+101,1034,0,ZAMBIA,MOUNT MAKULU,Eastern and Southern Africa,-15.5,28.3,1299,1,1,1,1,0,1,1,1,1,1
+102,1036,0,ZAMBIA,MSEKERA,Eastern and Southern Africa,-13.38,32.39,770,1,0,1,1,1,1,1,1,1,1
+103,1037,0,ZAMBIA,NANGA,Eastern and Southern Africa,-15.767,27.92,978,1,0,1,1,0,0,1,1,1,1
+104,1040,0,ZAMBIA,ZAMSEED,Eastern and Southern Africa,-14.2,28.4,1178,1,0,1,1,0,0,0,0,0,0
+105,1041,0,ZAMBIA,ZAMSEED,,,,,1,,,,,,,,,
+106,1042,0,ZIMBABWE,ARCTURUS,Eastern and Southern Africa,-17.783,31.317,1375,1,1,0,0,0,1,1,0,0,0
+107,1043,0,ZIMBABWE,AREX,,,,,1,,,,,,,,,
+108,1044,0,ZIMBABWE,ART FARM,,,,,1,,,,,,,,,
+109,1045,0,ZIMBABWE,CHIREDZI,Eastern and Southern Africa,-21.02,31.58,427,1,0,1,1,0,1,1,1,1,1
+110,1048,0,ZIMBABWE,DRSS,,,,,1,,,,,,,,,
+111,1050,0,ZIMBABWE,GWEBI,Eastern and Southern Africa,-17.7,30.85,1441,1,0,0,0,0,0,1,1,1,1
+112,1051,0,ZIMBABWE,HARARE,Eastern and Southern Africa,-17.8,31.05,1498,1,1,1,1,1,1,1,1,1,1
+113,1052,0,ZIMBABWE,KADOMA,Eastern and Southern Africa,-18.32,30.9,1325,1,0,1,1,0,1,1,1,1,0
+114,1054,0,ZIMBABWE,MAKAHOLI,Eastern and Southern Africa,-19.83,30.78,1207,1,0,1,1,0,0,1,1,1,1
+115,1055,0,ZIMBABWE,MAKHOHOLI,Eastern and Southern Africa,-19.83,30.78,1207,1,1,1,1,1,1,1,1,1,1
+116,1056,0,ZIMBABWE,MARONDERA,Eastern and Southern Africa,-18.8,31.6,1084,1,0,0,0,1,1,1,0,0,0
+117,1057,0,ZIMBABWE,MATOPOS,Eastern and Southern Africa,-20.38,28.5,1380,1,0,0,0,0,0,0,0,0,1
+118,1058,0,ZIMBABWE,MAZOWE,Eastern and Southern Africa,-17.51,30.91,1370,1,0,1,1,0,0,0,0,0,0
+119,1063,0,ZIMBABWE,RATTRAY,Eastern and Southern Africa,-17.7,31.2,1403,1,0,1,1,1,1,0,0,0,0
+120,1064,0,ZIMBABWE,RATTRAY ARNOLD,Eastern and Southern Africa,-17.67,31.17,1458,1,0,0,0,1,1,0,1,1,1
+121,1065,0,ZIMBABWE,RATTRAY FARM,Eastern and Southern Africa,-17.7,31.2,1403,1,0,0,0,1,1,0,0,0,0
+122,1067,0,ZIMBABWE,SAVE VALLEY,Eastern and Southern Africa,-20.35,32.33,443,1,0,0,1,0,1,1,0,1,0
+123,1068,0,ZIMBABWE,SHAMVA ZIM,Eastern and Southern Africa,-17.32,31.57,1106,1,0,0,0,0,0,1,1,0,0
+124,5,0,ANGOLA,ANGOLA,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+125,13,0,ANGOLA,KILOMBO EXPERIMENTAL STATION,Eastern and Southern Africa,-8.9,14.7,514,0,,,,,,,,,
+126,79,0,BOTSWANA,PANDAMATENGA,Eastern and Southern Africa,-18.55,25.65,1071,0,,,,,,,,,
+127,82,0,BOTSWANA,SEBELE-LOWN,Eastern and Southern Africa,-24.6,26,979,0,,,,,,,,,
+128,210,0,CONGO,TSHIBATI,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+129,278,0,ERITREA,HALHALE,Eastern and Southern Africa,15,39,1837,0,,,,,,,,,
+130,279,0,ERITREA,SHAMBIKO,Eastern and Southern Africa,14.92,37.83,906,0,,,,,,,,,
+131,299,0,ETHIOPIA,NULL,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+132,521,0,LESOTHO,TEYATEYANENG,Eastern and Southern Africa,-29.15,27.75,1688,0,,,,,,,,,
+133,525,0,MALAWI,BAKA RESEARCH STATION,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+134,535,0,MALAWI,MPHIMBI,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+135,537,0,MALAWI,NOT IDENTIFIED,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+136,540,0,MALAWI,ZOMBA,Eastern and Southern Africa,-15.38,35.33,937,0,,,,,,,,,
+137,732,0,MOZAMBIQUE,MORRUMBALA-ZAMBEZIA,Eastern and Southern Africa,-17.33,35.58,413,0,,,,,,,,,
+138,733,0,MOZAMBIQUE,MOZAMBIQUE,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+139,734,0,MOZAMBIQUE,MUTARARA,Eastern and Southern Africa,-17.45,35.067,42,0,,,,,,,,,
+140,735,0,MOZAMBIQUE,NAMIALO,Eastern and Southern Africa,-14.91,40,193,0,,,,,,,,,
+141,740,0,MOZAMBIQUE,SEMOL,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+142,742,0,MOZAMBIQUE,UMBELUZI,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+143,743,0,MOZAMBIQUE,USSUDENGA,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+144,752,0,NAMIBIA,MASHARE,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+145,753,0,NAMIBIA,MITKOMST RESEARCH STATION,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+146,754,0,NAMIBIA,RUNDA,Eastern and Southern Africa,-17.96,19.72,1107,0,,,,,,,,,
+147,867,0,SOUTH AFRICA,FREIDENHEIM VALLEY,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+148,868,0,SOUTH AFRICA,FRIEDENHEIM VALLEY,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+149,870,0,SOUTH AFRICA,MPUMALANGA,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+150,871,0,SOUTH AFRICA,NELSPRUIT MPUMALANGA,Eastern and Southern Africa,-25.47,30.97,671,0,,,,,,,,,
+151,873,0,SOUTH AFRICA,PANNAR,,,,,,,,,,,,,,
+152,874,0,SOUTH AFRICA,PETIT,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+153,876,0,SOUTH AFRICA,TSHIOMBO,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+154,892,0,SWAZILAND,BIG-BEND,Eastern and Southern Africa,-26.82,31.93,115,0,,,,,,,,,
+155,893,0,SWAZILAND,LES,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+156,895,0,SWAZILAND,LUVE,Eastern and Southern Africa,-26.281,31.505,513,0,,,,,,,,,
+157,899,0,SWAZILAND,SHEWULA,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+158,900,0,SWAZILAND,SWAZILAND,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+159,906,0,TANZANIA,ARUSHA SEED FARM AFSF,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+160,909,0,TANZANIA,CHOLLIMA,Eastern and Southern Africa,-7.43,37.7,151,0,,,,,,,,,
+161,917,0,TANZANIA,KATRIN-IFAKARA,Eastern and Southern Africa,-8.13,36.68,262,0,,,,,,,,,
+162,923,0,TANZANIA,MOROGORO,Eastern and Southern Africa,-6.83,37.65,517,0,,,,,,,,,
+163,925,0,TANZANIA,NGARAMTONI,Eastern and Southern Africa,-3.36,36.67,1415,0,,,,,,,,,
+164,926,0,TANZANIA,NGARAMTONI-ARUSHA,Eastern and Southern Africa,-3.36,36.67,1415,0,,,,,,,,,
+165,930,0,TANZANIA,TANZANIA,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+166,932,0,TANZANIA,TUMBI-TABORA,Eastern and Southern Africa,-5.07,32.73,1162,0,,,,,,,,,
+167,951,0,UGANDA,BULEGENI,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+168,952,0,UGANDA,BULENGENI,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+169,957,0,UGANDA,LIKONDE,,,,,,,,,,,,,,
+170,959,0,UGANDA,MSK,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+171,965,0,UGANDA,UGANDA,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+172,1021,0,ZAMBIA,CHISAMBA,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+173,1025,0,ZAMBIA,KATUBA,Eastern and Southern Africa,-15.17,28.23,1114,0,,,,,,,,,
+174,1026,0,ZAMBIA,KUTUMANI,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+175,1027,0,ZAMBIA,LYEMPE,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+176,1028,0,ZAMBIA,MAGOBO,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+177,1030,0,ZAMBIA,MANSA,Eastern and Southern Africa,-11.12,28.53,1070,0,,,,,,,,,
+178,1038,0,ZAMBIA,SESHEKE,Eastern and Southern Africa,-17.28,24.18,994,0,,,,,,,,,
+179,1039,0,ZAMBIA,ZAMBIA,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+180,1046,0,ZIMBABWE,CIMMYT,,,,,,,,,,,,,,
+181,1049,0,ZIMBABWE,GLENDALE,Eastern and Southern Africa,-17.08,31.03,1284,0,,,,,,,,,
+182,1060,0,ZIMBABWE,PANNAR,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+183,1061,0,ZIMBABWE,PIONEER,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+184,1066,0,ZIMBABWE,RUWA,Eastern and Southern Africa,-17.89,31.24,1554,0,,,,,,,,,
+185,1069,0,ZIMBABWE,ZIMBABWE,Eastern and Southern Africa,0,0,0,0,,,,,,,,,
+186,2101,1,GHANA,EJURA,Western Africa,7.383333,-1.366667,232,1,0,0,0,0,0,0,0,0,1
+187,2102,1,GHANA,FUMESUA,Western Africa,6.75,-1.583333,270,1,0,0,0,0,0,0,0,0,1
+188,2201,1,NIGERIA,ZARIA,Western Africa,11.066667,7.7,648,1,0,0,0,0,0,0,1,1,0
+189,2202,1,NIGERIA,SAMARU,Western Africa,11.183333,7.616667,730,1,0,0,0,0,0,0,1,1,0
+190,2301,1,SUDAN,WAD MEDANI,Eastern and Southern Africa,14.4,32.833333,402,1,0,0,0,0,0,0,0,1,0

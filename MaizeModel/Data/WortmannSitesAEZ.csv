@@ -1,0 +1,29 @@
+FID,LocationID,Country,Location,Region,Latitude,Longitude,ElevM,AEZcode
+0,2501,Kenya,Eldoret,Eastern and Southern Africa,0.569000000000000,35.308000000000000,2150,14
+1,2502,Kenya,Embu,Eastern and Southern Africa,-0.494000000000000,37.451999999999998,1500,13
+2,2503,Kenya,Kandara,Eastern and Southern Africa,-0.465000000000000,37.719000000000001,1125,13
+3,2504,Kenya,Kitale,Eastern and Southern Africa,1.000000000000000,34.991999999999997,1863,14
+4,2505,Kenya,Machakos,Eastern and Southern Africa,-1.539000000000000,37.252000000000002,1585,12
+5,2506,Kenya,Migori,Eastern and Southern Africa,-0.993000000000000,34.512999999999998,1450,14
+6,2507,Kenya,Njoro,Eastern and Southern Africa,-0.344000000000000,35.945999999999998,2170,14
+7,2508,Malawi,Bunda,Eastern and Southern Africa,-14.170000000000000,33.740000000000002,1150,8
+8,2509,Malawi,Central-On-farm,Eastern and Southern Africa,-13.683000000000000,34.267000000000003,615,8
+9,2510,Malawi,Salima,Eastern and Southern Africa,-14.054000000000000,34.393000000000001,1240,12
+10,2511,Rwanda,Bugesera,Eastern and Southern Africa,-2.239000000000000,30.067000000000000,1369,13
+11,2512,Rwanda,Burera,Eastern and Southern Africa,-1.491000000000000,29.876999999999999,2096,14
+12,2513,Rwanda,Huye,Eastern and Southern Africa,-2.539000000000000,29.741000000000000,1630,14
+13,2514,Rwanda,Musanze,Eastern and Southern Africa,-1.513000000000000,29.597000000000001,1930,14
+14,2515,Rwanda,Ngoma,Eastern and Southern Africa,-2.227000000000000,30.417000000000002,1458,13
+15,2516,Rwanda,Nyagatare,Eastern and Southern Africa,-1.516000000000000,30.283999999999999,1500,13
+16,2517,Tanzania,Daredo,Eastern and Southern Africa,-3.766000000000000,35.524000000000001,1635,13
+17,2518,Tanzania,Ilonga,Eastern and Southern Africa,-6.783000000000000,37.036999999999999,490,9
+18,2519,Tanzania,Kwedizinga,Eastern and Southern Africa,-5.418000000000000,38.515999999999998,350,9
+19,2520,Tanzania,Mavamizi,Eastern and Southern Africa,-5.138000000000000,38.851999999999997,190,9
+20,2521,Tanzania,Mlingano,Eastern and Southern Africa,-5.138000000000000,38.851999999999997,80,9
+21,2522,Tanzania,Muheza,Eastern and Southern Africa,-5.138000000000000,38.851999999999997,190,9
+22,2523,Tanzania,Selian,Eastern and Southern Africa,-3.360000000000000,36.631999999999998,1410,13
+23,2524,Tanzania,Uyole,Eastern and Southern Africa,-8.917999999999999,33.517000000000003,1783,13
+24,2525,Zambia,Choma Mochipapa,Eastern and Southern Africa,-16.829000000000001,27.062999999999999,1290,12
+25,2526,Zambia,Kasama,Eastern and Southern Africa,-10.170999999999999,31.225999999999999,1230,13
+26,2527,Zambia,Masekera,Eastern and Southern Africa,-13.640000000000001,32.555000000000000,1224,8
+27,2528,Zambia,Mt. Makulu,Eastern and Southern Africa,-15.548000000000000,28.251000000000001,1220,8
